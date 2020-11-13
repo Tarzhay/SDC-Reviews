@@ -12,9 +12,9 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/api')
+    axios.get('/api/products/reviews/')
     .then((response) => {
-      console.log(response.data);
+      console.log(response);
       this.setState({
         reviews: response.data
       })
@@ -32,5 +32,7 @@ class App extends React.Component {
     )
   }
 }
+
+
 
 export default App;

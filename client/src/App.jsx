@@ -6,16 +6,17 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      temp: 1
+      reviews: [1, 2, 3]
     }
+
   }
 
   componentDidMount() {
     axios.get('/api')
     .then((response) => {
-      console.log(response);
+      console.log(response.data);
       this.setState({
-        data: response.data
+        reviews: response.data
       })
     })
     .catch((err) => {
@@ -26,8 +27,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1> Yo yo yo!!</h1>
-        <Reviews />
+        <Reviews reviews={this.state.reviews}/>
       </div>
     )
   }

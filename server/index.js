@@ -10,6 +10,26 @@ app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
+app.get('/:id', (req, res) => {
+  res.sendFile(path.join(__dirname + '/../client/dist/index.html'));
+});
+
+app.get('/api/reviews/:id', (req, res) => {
+  const {id} = req.params;
+  db.connection.query('SELECT * FROM reviews', (err, result) => {
+    if (err) {
+      console.log(err)
+    }
+    res.send(result);
+  })
+})
+
+app.listen(port, () => {
+  console.log(`Listening at port ${port}`)
+})
+
+
+
 // var summaryDataProcessor = function(array) {
 //   var result = {};
 //   result.fives = 0;
@@ -48,20 +68,7 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 //   return result
 // }
 
-app.get('/api/products/reviews', (req, res) => {
-  const {id} = req.params;
-  {id: 0}
-  db.connection.query('SELECT * FROM reviews', (err, result) => {
-    if (err) {
-      console.log(err)
-    }
-    var processedResult = summaryDataProcessor(result);
-    var finalResult =_.extend(result, processedResult);
-    console.log(finalResult);
-    res.send(finalResult);
-  })
-})
 
-app.listen(port, () => {
-  console.log(`Listening at port ${port}`)
-})
+
+    // var processedResult = summaryDataProcessor(result);
+    // var finalResult =_.extend(result, processedResult);

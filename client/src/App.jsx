@@ -8,39 +8,9 @@ class App extends React.Component {
     this.state = {
       reviews: [1, 2, 3],
     }
-    // this.getReviewData = this.getReviewData.bind(this);
   }
 
-  // getReviewData() {
-  //   console.log('####')
-  //   console.log(window.location);
-  //   axios.get(`/${window.location.pathname}`)
-  //   .then((response) => {
-  //     console.log(response.data);
-  //     this.setstate({
-  //       data: response.data
-  //     })
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   })
-  // }
-
   componentDidMount() {
-
-    // // get page structure?
-    // axios.get(`/${window.location.pathname}`)
-    // .then((response) => {
-    //   console.log(response.data);
-    //   this.setstate({
-    //     data: response.data
-    //   })
-    // })
-    // .catch((err) => {
-    //   console.log(err);
-    // })
-
-    // get page data
     axios.get(`/api/reviews${window.location.pathname}`)
     .then((response) => {
       this.setState({
@@ -50,19 +20,6 @@ class App extends React.Component {
     .catch((err) => {
       console.log(err);
     })
-
-
-    // getReviewData();
-    // axios.get('/api/products/reviews/')
-    // .then((response) => {
-    //   console.log(response);
-    //   this.setState({
-    //     reviews: response.data
-    //   })
-    // })
-    // .catch((err) => {
-    //   console.log(err);
-    // })
   }
 
   render() {

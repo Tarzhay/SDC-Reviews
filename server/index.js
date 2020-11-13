@@ -15,8 +15,8 @@ app.get('/:id', (req, res) => {
 });
 
 app.get('/api/reviews/:id', (req, res) => {
-  const {id} = req.params;
-  db.connection.query('SELECT * FROM reviews', (err, result) => {
+  var productId = req.params.id;
+  db.connection.query(`SELECT * FROM reviews WHERE productId = ${productId}`, (err, result) => {
     if (err) {
       console.log(err)
     }

@@ -1,5 +1,6 @@
 import React from "react";
 import Reviews from "./Reviews.jsx";
+import Summary from "./Summary.jsx";
 import axios from "axios";
 
 class App extends React.Component {
@@ -25,6 +26,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <Summary reviews={this.state.reviews}/>
         <Reviews reviews={this.state.reviews}/>
       </div>
     )

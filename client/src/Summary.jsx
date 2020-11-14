@@ -2,25 +2,27 @@ import React from "react";
 import {starify} from "./Review.jsx";
 
 const Summary = (props) => {
-  console.log(props.reviews);
   var broadAgeAppealTotal = 0;
   var lengthOfPlayTotal = 0;
   var qualityTotal = 0;
   var valueTotal = 0;
+  var wouldRecommendTotal = 0;
   var fives = 0;
   var fours = 0;
   var threes = 0;
   var twos = 0;
   var ones = 0;
 
+
   for (var i = 0; i < props.reviews.length; i++) {
     broadAgeAppealTotal += props.reviews[i].broadAgeAppeal;
     lengthOfPlayTotal += props.reviews[i].lengthOfPlay;
     qualityTotal += props.reviews[i].quality;
     valueTotal += props.reviews[i].value
+    wouldRecommendTotal += props.reviews[i].wouldRecommend;
+
 
     var average = Math.round((props.reviews[i].broadAgeAppeal + props.reviews[i].lengthOfPlay + props.reviews[i].quality + props.reviews[i].value)/4)
-
     if (average === 5) {
       fives++;
     } else if (average === 4) {
@@ -38,13 +40,14 @@ const Summary = (props) => {
   var lengthOfPlayAverage = lengthOfPlayTotal/props.reviews.length;
   var qualityAverage = qualityTotal/props.reviews.length;
   var valueAverage = valueTotal/props.reviews.length;
-  var totalAverage = (broadAgeAppealAverage + lengthOfPlayAverage + qualityAverage + valueAverage) / 4
+  var totalAverage = (broadAgeAppealAverage + lengthOfPlayAverage + qualityAverage + valueAverage) / 4;
 
-  var fivesPer = Math.round(fives/props.reviews.length) * 100;
-  var foursPer = Math.round(fours/props.reviews.length) * 100;
-  var threesPer = Math.round(threes/props.reviews.length) * 100;
-  var twosPer = Math.round(twos/props.reviews.length) * 100;
-  var onesPer = Math.round(ones/props.reviews.length) * 100;
+  var wouldRecommendPer = (wouldRecommendTotal/props.reviews.length * 100).toFixed(0);
+  var fivesPer = (fives/props.reviews.length * 100).toFixed(0);
+  var foursPer = (fours/props.reviews.length * 100).toFixed(0);
+  var threesPer = (threes/props.reviews.length * 100).toFixed(0);
+  var twosPer = (twos/props.reviews.length * 100).toFixed(0);
+  var onesPer = (ones/props.reviews.length * 100).toFixed(0);
 
 
   return (
@@ -57,10 +60,11 @@ const Summary = (props) => {
       <div>{totalAverage.toFixed(1)}</div>
       <div>{starify(Math.round(totalAverage))}</div>
       <div>{props.reviews.length} star ratings</div>
-      <div>{broadAgeAppealAverage.toFixed(1)}</div>
-      <div>{lengthOfPlayAverage.toFixed(1)}</div>
-      <div>{qualityAverage.toFixed(1)}</div>
-      <div>{valueAverage.toFixed(1)}</div>
+      <div>{wouldRecommendPer}% would recommend</div>
+      <div>{broadAgeAppealAverage.toFixed(1)} Broad Age Appeal</div>
+      <div>{lengthOfPlayAverage.toFixed(1)} Length of Play</div>
+      <div>{qualityAverage.toFixed(1)} Quality</div>
+      <div>{valueAverage.toFixed(1)} Value</div>
     </div>
   )
 }

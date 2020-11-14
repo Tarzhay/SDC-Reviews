@@ -26,6 +26,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <h3>Guest Ratings and Reviews</h3>
         <Summary reviews={this.state.reviews}/>
         <Reviews reviews={this.state.reviews}/>
       </div>

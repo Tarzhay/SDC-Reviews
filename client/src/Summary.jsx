@@ -1,4 +1,5 @@
 import React from "react";
+import {starify} from "./Review.jsx";
 
 const Summary = (props) => {
   console.log(props.reviews);
@@ -17,7 +18,9 @@ const Summary = (props) => {
     lengthOfPlayTotal += props.reviews[i].lengthOfPlay;
     qualityTotal += props.reviews[i].quality;
     valueTotal += props.reviews[i].value
+
     var average = Math.round((props.reviews[i].broadAgeAppeal + props.reviews[i].lengthOfPlay + props.reviews[i].quality + props.reviews[i].value)/4)
+
     if (average === 5) {
       fives++;
     } else if (average === 4) {
@@ -46,12 +49,13 @@ const Summary = (props) => {
 
   return (
     <div>
-      <div>{totalAverage.toFixed(1)}</div>
       <div>5 stars {fivesPer}%</div>
       <div>4 stars {foursPer}%</div>
       <div>3 stars {threesPer}%</div>
       <div>2 stars {twosPer}%</div>
       <div>1 star {onesPer}%</div>
+      <div>{totalAverage.toFixed(1)}</div>
+      <div>{starify(Math.round(totalAverage))}</div>
       <div>{props.reviews.length} star ratings</div>
       <div>{broadAgeAppealAverage.toFixed(1)}</div>
       <div>{lengthOfPlayAverage.toFixed(1)}</div>

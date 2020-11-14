@@ -1,7 +1,7 @@
 import React from "react";
 
-const Review = (props) => {
-  var stars = Math.round(props.review.average);
+var starify = (stars) => {
+  var stars = Math.round(stars);
   // <ion-icon name="md-star"></ion-icon>
   // <ion-icon name="md-star-half"></ion-icon>
   // <ion-icon name="md-star-outline"></ion-icon>
@@ -74,10 +74,13 @@ const Review = (props) => {
       </div>
     )
   }
+  return starDisplay;
+}
 
+const Review = (props) => {
   return  (
     <div className="review">
-      {starDisplay}
+      {starify(props.review.average)}
       <div class="title">{props.review.reviewTitle}</div>
       <div class="average">{props.review.average}</div>
       <div class="username">{props.review.username}</div>
@@ -94,4 +97,5 @@ const Review = (props) => {
 }
 
 
-export default Review;
+// export default Review;
+export {Review, starify};

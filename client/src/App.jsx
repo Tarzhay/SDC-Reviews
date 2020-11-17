@@ -11,15 +11,21 @@ class App extends React.Component {
     this.state = {
       reviews: [],
       sortBy: "most recent",
-      filderBy: "all ratings",
+      filterBy: "all ratings",
       verifiedPurchase: false
     }
     this.handleSort = this.handleSort.bind(this);
+    this.handleFilter = this.handleFilter.bind(this);
   }
 
   handleSort(e) {
-    console.log(e.target);
     this.setState({sortBy: e.target.value})
+  }
+
+
+  handleFilter(e) {
+    console.log(e.target);
+    this.setState({filterBy: e.target.value})
   }
 
   componentDidMount() {
@@ -39,7 +45,7 @@ class App extends React.Component {
       <div>
         <h3>Guest Ratings and Reviews</h3>
         <Summary reviews={this.state.reviews}/>
-        <Filterer sortBy={this.state.sortBy} handleSort={this.handleSort}/>
+        <Filterer handleSort={this.handleSort} handleFilter={this.handleFilter}/>
         <Reviews reviews={this.state.reviews}/>
       </div>
     )

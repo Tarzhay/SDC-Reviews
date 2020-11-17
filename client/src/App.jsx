@@ -1,21 +1,39 @@
 import React from "react";
-import Reviews from "./Reviews.jsx";
 import axios from "axios";
+import Summary from "./Summary.jsx";
+import Filterer from "./Filterer.jsx";
+import Reviews from "./Reviews.jsx";
+
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      temp: 1
+      allReviews: [],
+      displayedReviews: [],
+      sortBy: "most recent",
+      filterBy: "all ratings",
+      verifiedPurchase: false
+    }
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
+
+  handleInputChange(e) {
+    const name = e.target.name;
+    const value = e.target.value;
+
+    if (name === "verifiedPurchase") {
+      this.setState({verifiedPurchase: !this.state.verifiedPurchase})
+    } else {
+      this.setState({[name]: value})
     }
   }
 
   componentDidMount() {
-    axios.get('/api')
+    axios.get(`/api/reviews${window.location.pathname}`)
     .then((response) => {
-      console.log(response);
       this.setState({
-        data: response.data
+        allReviews: response.data
       })
     })
     .catch((err) => {
@@ -26,8 +44,10 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1> Yo yo yo!!</h1>
-        <Reviews />
+        <h3>Guest Ratings and Reviews</h3>
+        <Summary reviews={this.state.allReviews}/>
+        <Filterer handleInputChange={this.handleInputChange}/>
+        <Reviews reviews={this.state.allReviews}/>
       </div>
     )
   }

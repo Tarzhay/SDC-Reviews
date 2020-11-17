@@ -1,8 +1,11 @@
 import React from "react";
+import {Review} from "./Review.jsx"
 
-const Reviews = () => (
-  <div>
-  Can you see me?
+const Reviews = (props) => (
+  <div className="reviews">
+    {props.reviews.map((review, index) =>
+    <Review key={index} review={review}/>
+    )}
   </div>
 
 )

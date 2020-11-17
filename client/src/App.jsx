@@ -9,7 +9,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      reviews: [],
+      allReviews: [],
+      displayedReviews: [],
       sortBy: "most recent",
       filterBy: "all ratings",
       verifiedPurchase: false
@@ -18,8 +19,6 @@ class App extends React.Component {
   }
 
   handleInputChange(e) {
-    console.log(e.target.name);
-    console.log(e.target.value);
     const name = e.target.name;
     const value = e.target.value;
 
@@ -34,7 +33,7 @@ class App extends React.Component {
     axios.get(`/api/reviews${window.location.pathname}`)
     .then((response) => {
       this.setState({
-        reviews: response.data
+        allReviews: response.data
       })
     })
     .catch((err) => {
@@ -46,9 +45,9 @@ class App extends React.Component {
     return (
       <div>
         <h3>Guest Ratings and Reviews</h3>
-        <Summary reviews={this.state.reviews}/>
+        <Summary reviews={this.state.allReviews}/>
         <Filterer handleInputChange={this.handleInputChange}/>
-        <Reviews reviews={this.state.reviews}/>
+        <Reviews reviews={this.state.allReviews}/>
       </div>
     )
   }

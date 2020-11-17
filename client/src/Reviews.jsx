@@ -2,7 +2,6 @@ import React from "react";
 import {Review} from "./Review.jsx"
 
 const sortTranslator = (sortState, reviewArray) => {
-  console.log(sortState);
   var sortNewest = (a, b) => {
     if (a.reviewDate < b.reviewDate) {
       return 1
@@ -60,16 +59,16 @@ const filterTranslator = (filterState, reviewArray) => {
   }
 }
 
-// const sortAndFilter = (sortState, filterState, reviewArray) => {
-//   var sortedArray = sortTranslator(sortState, reviewArray);
-//   var result = filterTranslator(filterState, sortedArray);
-//   console.log(result);
-//   return result;
-// }
+const sortAndFilter = (sortState, filterState, reviewArray) => {
+  var sortedArray = sortTranslator(sortState, reviewArray);
+  var result = filterTranslator(filterState, sortedArray);
+  console.log(result);
+  return result;
+}
 
 const Reviews = ({sortBy, filterBy, displayedReviews}) => (
   <div className="reviews">
-    {sortTranslator(sortBy, displayedReviews).map((review, index) =>
+    {sortAndFilter(sortBy, filterBy, displayedReviews).map((review, index) =>
     <Review key={index} review={review}/>
     )}
   </div>

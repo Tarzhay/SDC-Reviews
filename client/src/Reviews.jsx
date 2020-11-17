@@ -1,7 +1,50 @@
 import React from "react";
 import {Review} from "./Review.jsx"
 
-const stateTranslator = (filterState, reviewArray) => {
+const sortTranslator = (sortState, reviewArray) => {
+  console.log(sortState);
+  var sortNewest = (a, b) => {
+    if (a.reviewDate < b.reviewDate) {
+      return 1
+    } else if (a.reviewDate > b.reviewDate) {
+      return -1
+    } else {
+      return 0
+    }
+  }
+
+  var sortHighest = (a, b) => {
+    if (a.average < b.average) {
+      return 1
+    } else if (a.average > b.average) {
+      return -1
+    } else {
+      return 0
+    }
+  }
+
+  var sortLowest = (a, b) => {
+    if (a.average > b.average) {
+      return 1
+    } else if (a.average < b.average) {
+      return -1
+    } else {
+      return 0
+    }
+  }
+
+  if (sortState === "most recent" || sortState === "most helpful") {
+    return reviewArray.sort(sortNewest);
+  } else if (sortState === "highest rated") {
+    return reviewArray.sort(sortHighest);
+  } else if (sortState === "lowest rated") {
+    return reviewArray.sort(sortLowest);
+  } else {
+    return "Fix sorting options";
+  }
+}
+
+const filterTranslator = (filterState, reviewArray) => {
   if (filterState === "all ratings") {
     return reviewArray;
   } else if (filterState === "5 stars") {
@@ -15,12 +58,18 @@ const stateTranslator = (filterState, reviewArray) => {
   } else if (filterState === "1 star") {
     return reviewArray.filter(review => Math.round(review.average) === 1)
   }
-  console.log("@#$%@#$%@")
 }
 
-const Reviews = ({sortyBy, filterBy, displayedReviews}) => (
+// const sortAndFilter = (sortState, filterState, reviewArray) => {
+//   var sortedArray = sortTranslator(sortState, reviewArray);
+//   var result = filterTranslator(filterState, sortedArray);
+//   console.log(result);
+//   return result;
+// }
+
+const Reviews = ({sortBy, filterBy, displayedReviews}) => (
   <div className="reviews">
-    {stateTranslator(filterBy, displayedReviews).map((review, index) =>
+    {sortTranslator(sortBy, displayedReviews).map((review, index) =>
     <Review key={index} review={review}/>
     )}
   </div>

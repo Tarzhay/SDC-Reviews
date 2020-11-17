@@ -49,13 +49,6 @@ const Summary = (props) => {
   var twosPer = (twos/props.reviews.length * 100).toFixed(0) + '%';
   var onesPer = (ones/props.reviews.length * 100).toFixed(0) + '%';
 
-  // var fivesPer = fivesPer + '%';
-  // var foursPerStr = foursPer + '%';
-  // var threesPer = (threes/props.reviews.length * 100).toFixed(0);
-  // var twosPer = (twos/props.reviews.length * 100).toFixed(0);
-  // var onesPer = (ones/props.reviews.length * 100).toFixed(0);
-
-
   return (
     <div>
       <div>5 stars {fivesPer}</div>

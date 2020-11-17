@@ -3,7 +3,7 @@ import {Review} from "./Review.jsx"
 
 const Reviews = (props) => (
   <div className="reviews">
-    {props.reviews.map((review, index) =>
+    {props.displayedReviews.map((review, index) =>
     <Review key={index} review={review}/>
     )}
   </div>

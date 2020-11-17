@@ -1,7 +1,7 @@
 import React from "react";
+import axios from "axios";
 import Reviews from "./Reviews.jsx";
 import Summary from "./Summary.jsx";
-import axios from "axios";
 
 class App extends React.Component {
   constructor(props) {

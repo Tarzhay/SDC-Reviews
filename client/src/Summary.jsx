@@ -43,20 +43,43 @@ const Summary = (props) => {
   var totalAverage = (broadAgeAppealAverage + lengthOfPlayAverage + qualityAverage + valueAverage) / 4;
 
   var wouldRecommendPer = (wouldRecommendTotal/props.reviews.length * 100).toFixed(0);
-  var fivesPer = (fives/props.reviews.length * 100).toFixed(0);
-  var foursPer = (fours/props.reviews.length * 100).toFixed(0);
-  var threesPer = (threes/props.reviews.length * 100).toFixed(0);
-  var twosPer = (twos/props.reviews.length * 100).toFixed(0);
-  var onesPer = (ones/props.reviews.length * 100).toFixed(0);
+  var fivesPer = (fives/props.reviews.length * 100).toFixed(0) + '%';
+  var foursPer = (fours/props.reviews.length * 100).toFixed(0) + '%';
+  var threesPer = (threes/props.reviews.length * 100).toFixed(0) + '%';
+  var twosPer = (twos/props.reviews.length * 100).toFixed(0) + '%';
+  var onesPer = (ones/props.reviews.length * 100).toFixed(0) + '%';
+
+  // var fivesPer = fivesPer + '%';
+  // var foursPerStr = foursPer + '%';
+  // var threesPer = (threes/props.reviews.length * 100).toFixed(0);
+  // var twosPer = (twos/props.reviews.length * 100).toFixed(0);
+  // var onesPer = (ones/props.reviews.length * 100).toFixed(0);
 
 
   return (
     <div>
-      <div>5 stars {fivesPer}%</div>
-      <div>4 stars {foursPer}%</div>
-      <div>3 stars {threesPer}%</div>
-      <div>2 stars {twosPer}%</div>
-      <div>1 star {onesPer}%</div>
+      <div>5 stars {fivesPer}</div>
+      <div>4 stars {foursPer}</div>
+      <div>3 stars {threesPer}</div>
+      <div>2 stars {twosPer}</div>
+      <div>1 star {onesPer}</div>
+      <div className="w3-container">
+        <div className="w3-border">
+          <div className="w3-grey" style={{height: '24px', width: fivesPer}}></div>
+        </div><br></br>
+        <div className="w3-border">
+          <div className="w3-grey" style={{height: '24px', width: foursPer}}></div>
+        </div><br></br>
+        <div className="w3-border">
+          <div className="w3-grey" style={{height: '24px', width: threesPer}}></div>
+        </div><br></br>
+        <div className="w3-border">
+          <div className="w3-grey" style={{height: '24px', width: twosPer}}></div>
+        </div><br></br>
+        <div className="w3-border">
+          <div className="w3-grey" style={{height: '24px', width: onesPer}}></div>
+        </div>
+    </div>
       <div>{totalAverage.toFixed(1)}</div>
       <div>{starify(Math.round(totalAverage))}</div>
       <div>{props.reviews.length} star ratings</div>

@@ -33,7 +33,8 @@ class App extends React.Component {
     axios.get(`/api/reviews${window.location.pathname}`)
     .then((response) => {
       this.setState({
-        allReviews: response.data
+        allReviews: response.data,
+        displayedReviews: response.data
       })
     })
     .catch((err) => {
@@ -47,7 +48,7 @@ class App extends React.Component {
         <h3>Guest Ratings and Reviews</h3>
         <Summary reviews={this.state.allReviews}/>
         <Filterer handleInputChange={this.handleInputChange}/>
-        <Reviews reviews={this.state.allReviews}/>
+        <Reviews sortBy={this.state.sortBy} filterBy={this.state.filterBy} displayedReviews={this.state.displayedReviews}/>
       </div>
     )
   }

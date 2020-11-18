@@ -44,8 +44,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h3>Guest Ratings and Reviews</h3>
+      <div className="app">
+        <h3 className="appTitle">Guest Ratings and Reviews</h3>
         <Summary reviews={this.state.allReviews}/>
         <Filterer handleInputChange={this.handleInputChange}/>
         <Reviews sortBy={this.state.sortBy} filterBy={this.state.filterBy} displayedReviews={this.state.displayedReviews}/>

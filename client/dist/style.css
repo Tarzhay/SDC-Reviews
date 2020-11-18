@@ -1,6 +1,17 @@
 .review {
-  font-family: Helvetica, sans-serif;
   border-style: solid;
+}
+
+.app {
+  font-family: Helvetica, sans-serif;
+}
+
+.appTitle {
+  text-align: center;
+}
+
+.summary {
+  display: flex;
 }
 
 .meter {

@@ -50,27 +50,27 @@ const Summary = (props) => {
   var onesPer = (ones/props.reviews.length * 100).toFixed(0) + '%';
 
   return (
-    <div>
-      <div>5 stars {fivesPer}</div>
-      <div>4 stars {foursPer}</div>
-      <div>3 stars {threesPer}</div>
-      <div>2 stars {twosPer}</div>
-      <div>1 star {onesPer}</div>
+    <div className="summary">
+      <div className="starRating">5 stars {fivesPer}</div>
+      <div className="starRating">4 stars {foursPer}</div>
+      <div className="starRating">3 stars {threesPer}</div>
+      <div className="starRating">2 stars {twosPer}</div>
+      <div className="starRating">1 star {onesPer}</div>
       <div className="w3-container">
-        <div className="w3-border">
-          <div className="w3-grey" style={{height: '24px', width: fivesPer}}></div>
+        <div className="w3-border w3-round">
+          <div className="w3-green w3-round" style={{height: '6px', width: fivesPer}}></div>
         </div><br></br>
-        <div className="w3-border">
-          <div className="w3-grey" style={{height: '24px', width: foursPer}}></div>
+        <div className="w3-border w3-round">
+          <div className="w3-green w3-round" style={{height: '6px', width: foursPer}}></div>
         </div><br></br>
-        <div className="w3-border">
-          <div className="w3-grey" style={{height: '24px', width: threesPer}}></div>
+        <div className="w3-border w3-round">
+          <div className="w3-green w3-round" style={{height: '6px', width: threesPer}}></div>
         </div><br></br>
-        <div className="w3-border">
-          <div className="w3-grey" style={{height: '24px', width: twosPer}}></div>
+        <div className="w3-border w3-round">
+          <div className="w3-green w3-round" style={{height: '6px', width: twosPer}}></div>
         </div><br></br>
-        <div className="w3-border">
-          <div className="w3-grey" style={{height: '24px', width: onesPer}}></div>
+        <div className="w3-border w3-round">
+          <div className="w3-green w3-round" style={{height: '6px', width: onesPer}}></div>
         </div>
     </div>
       <div>{totalAverage.toFixed(1)}</div>

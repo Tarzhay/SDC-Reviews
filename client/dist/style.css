@@ -12,7 +12,36 @@
 
 .summary {
   display: flex;
+  justify-content: space-around;
 }
+
+.summary br {
+  /* display: block;
+  margin: 1px; */
+  line-height:500px;
+}
+
+.progressBar {
+  display: flex;
+  flex-direction: row;
+}
+
+.progressBarPercents {
+  font-size: 12px;
+  flex-direction: column;
+  line-height:15px;
+}
+
+.progressBarBar {
+  flex-direction: column;
+}
+
+.w3-container {
+  color: rgba(0, 0, 0, 0)
+}
+
+
+
 
 .meter {
 	height: 20px;  /* Can be anything */

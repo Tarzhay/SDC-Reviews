@@ -51,36 +51,72 @@ const Summary = (props) => {
 
   return (
     <div className="summary">
-      <div className="starRating">5 stars {fivesPer}</div>
-      <div className="starRating">4 stars {foursPer}</div>
-      <div className="starRating">3 stars {threesPer}</div>
-      <div className="starRating">2 stars {twosPer}</div>
-      <div className="starRating">1 star {onesPer}</div>
-      <div className="w3-container">
-        <div className="w3-border w3-round">
-          <div className="w3-green w3-round" style={{height: '6px', width: fivesPer}}></div>
-        </div><br></br>
-        <div className="w3-border w3-round">
-          <div className="w3-green w3-round" style={{height: '6px', width: foursPer}}></div>
-        </div><br></br>
-        <div className="w3-border w3-round">
-          <div className="w3-green w3-round" style={{height: '6px', width: threesPer}}></div>
-        </div><br></br>
-        <div className="w3-border w3-round">
-          <div className="w3-green w3-round" style={{height: '6px', width: twosPer}}></div>
-        </div><br></br>
-        <div className="w3-border w3-round">
-          <div className="w3-green w3-round" style={{height: '6px', width: onesPer}}></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div className="progressBar">
+        <div className="progressBarPercents">
+          <br></br>
+          <div className="starRating">5 stars</div>
+          <br></br>
+          <div className="starRating">4 stars</div>
+          <br></br>
+          <div className="starRating">3 stars</div>
+          <br></br>
+          <div className="starRating">2 stars</div>
+          <br></br>
+          <div className="starRating">1 star</div>
         </div>
+        <div className="progressBarBar">
+          <div className="w3-container">
+            I am writing this text to give fixed length
+            <div className="w3-border w3-round">
+              <div className="w3-green w3-round" style={{height: '6px', width: fivesPer}}></div>
+            </div><br></br>
+            <div className="w3-border w3-round">
+              <div className="w3-green w3-round" style={{height: '6px', width: foursPer}}></div>
+            </div><br></br>
+            <div className="w3-border w3-round">
+              <div className="w3-green w3-round" style={{height: '6px', width: threesPer}}></div>
+            </div><br></br>
+            <div className="w3-border w3-round">
+              <div className="w3-green w3-round" style={{height: '6px', width: twosPer}}></div>
+            </div><br></br>
+            <div className="w3-border w3-round">
+              <div className="w3-green w3-round" style={{height: '6px', width: onesPer}}></div>
+            </div>
+        </div>
+      </div>
+      <div className="progressBarPercents">
+        <br></br>
+        <div>{fivesPer}</div>
+        <br></br>
+        <div>{foursPer}</div>
+        <br></br>
+        <div>{threesPer}</div>
+        <br></br>
+        <div>{twosPer}</div>
+        <br></br>
+        <div>{onesPer}</div>
+      </div>
     </div>
-      <div>{totalAverage.toFixed(1)}</div>
-      <div>{starify(Math.round(totalAverage))}</div>
-      <div>{props.reviews.length} star ratings</div>
-      <div>{wouldRecommendPer}% would recommend</div>
-      <div>{broadAgeAppealAverage.toFixed(1)} Broad Age Appeal</div>
-      <div>{lengthOfPlayAverage.toFixed(1)} Length of Play</div>
-      <div>{qualityAverage.toFixed(1)} Quality</div>
-      <div>{valueAverage.toFixed(1)} Value</div>
+      <div className="primaryRatings">
+        <div>{totalAverage.toFixed(1)}</div>
+        <div>{starify(Math.round(totalAverage))}</div>
+        <div>{props.reviews.length} star ratings</div>
+      </div>
+      <div className="secondaryRatings">
+        <div>{wouldRecommendPer}% would recommend</div>
+        <div>{broadAgeAppealAverage.toFixed(1)} Broad Age Appeal</div>
+        <div>{lengthOfPlayAverage.toFixed(1)} Length of Play</div>
+        <div>{qualityAverage.toFixed(1)} Quality</div>
+        <div>{valueAverage.toFixed(1)} Value</div>
+      </div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
   )
 }

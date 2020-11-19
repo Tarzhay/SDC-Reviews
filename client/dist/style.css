@@ -49,7 +49,14 @@
   align-items: center;
   align-content: center;
   justify-content: center;
-  /* align-items: center; */
+}
+
+.tertiaryRatings {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
 }
 
 .donut2 {

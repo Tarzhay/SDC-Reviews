@@ -52,7 +52,8 @@ const Summary = (props) => {
   var onesPer = (ones/props.reviews.length * 100).toFixed(0) + '%';
 
   return (
-    <div className="summary">
+    <div>
+      <div className="summary">
       <div></div>
       <div></div>
       <div></div>
@@ -113,16 +114,37 @@ const Summary = (props) => {
         <Donut2 score={wouldRecommendPer}/>
         <div>{wouldRecommendPer}% would recommend</div>
       </div>
-      <div>
-        <div>{broadAgeAppealAverage.toFixed(1)} Broad Age Appeal</div>
-        <div>{lengthOfPlayAverage.toFixed(1)} Length of Play</div>
-        <div>{qualityAverage.toFixed(1)} Quality</div>
-        <div>{valueAverage.toFixed(1)} Value</div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+      <div className="tertiaryRatings">
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <div></div>
+        <div></div>
+        <div className="tertiaryRating">
+          <Donut2 score={qualityAverage.toFixed(1) * 20}/>
+          <div>{qualityAverage.toFixed(1)} Quality</div>
+        </div>
+        <div  className="tertiaryRating">
+          <Donut2 score={broadAgeAppealAverage.toFixed(1)  * 20}/>
+          <div>{broadAgeAppealAverage.toFixed(1)} Broad Age Appeal</div>
+        </div>
+        <div  className="tertiaryRating">
+          <Donut2 score={lengthOfPlayAverage.toFixed(1)  * 20}/>
+          <div>{lengthOfPlayAverage.toFixed(1)} Length of Play</div>
+        </div>
+        <div className="tertiaryRating">
+          <Donut2 score={valueAverage.toFixed(1)  * 20}/>
+          <div>{valueAverage.toFixed(1)} Value</div>
+        </div>
+        <div></div>
+        <div></div>
       </div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
     </div>
   )
 }

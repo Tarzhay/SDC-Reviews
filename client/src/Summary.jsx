@@ -1,5 +1,6 @@
 import React from "react";
 // import Donut from "./Donut.jsx"
+import Donut2 from "./Donut2.jsx"
 import {starify} from "./Review.jsx";
 
 const Summary = (props) => {
@@ -109,8 +110,10 @@ const Summary = (props) => {
         <div id="totalReviews">{props.reviews.length} star ratings</div>
       </div>
       <div className="secondaryRatings">
-        {/* <Donut score={wouldRecommendPer}/> */}
+        <Donut2 score={wouldRecommendPer}/>
         <div>{wouldRecommendPer}% would recommend</div>
+      </div>
+      <div>
         <div>{broadAgeAppealAverage.toFixed(1)} Broad Age Appeal</div>
         <div>{lengthOfPlayAverage.toFixed(1)} Length of Play</div>
         <div>{qualityAverage.toFixed(1)} Quality</div>

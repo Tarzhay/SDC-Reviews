@@ -61,6 +61,21 @@
   justify-content: space-around;
 }
 
+#donut1 {
+  height: 60px;
+  width: 60px;
+  position: relative;
+  text-align: center;
+  color: green;
+}
+
+#centeredDonut1 {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 #donut2 {
   height: 60px;
   width: 60px;
@@ -69,7 +84,7 @@
   color: green;
 }
 
-#centeredDonut {
+#centeredDonut2 {
   position: absolute;
   top: 42%;
   left: 50%;

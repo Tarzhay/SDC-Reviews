@@ -13,7 +13,7 @@ const Donut1 = ({score}) => {
             a 4.7746 4.7746 0 0 1 0 -9.549"
         />
       </svg>
-      <div id="centeredDonut">{score}</div>
+      <div id="centeredDonut1">{score}</div>
     </div>
   )
 }

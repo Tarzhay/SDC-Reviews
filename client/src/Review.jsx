@@ -93,19 +93,19 @@ const Review = (props) => {
       <div className="attributeRatings">
         <div className="attributeRating">
           <Donut2 score={props.review.broadAgeAppeal * 20}></Donut2>
-          <div>{props.review.broadAgeAppeal} Broad age appeal</div>
+          <div>Broad age appeal</div>
         </div>
         <div className="attributeRating">
           <Donut2 score={props.review.lengthOfPlay * 20}></Donut2>
-          <div>{props.review.lengthOfPlay} Length of play</div>
+          <div>Length of play</div>
         </div>
         <div className="attributeRating">
           <Donut2 score={props.review.quality * 20}></Donut2>
-          <div>{props.review.quality} Quality</div>
+          <div>Quality</div>
         </div>
         <div className="attributeRating">
           <Donut2 score={props.review.value * 20}></Donut2>
-          <div>{props.review.value} Value</div>
+          <div>Value</div>
         </div>
         {/* <div>Helpful: ?</div>
         <div>Report review: ?</div> */}

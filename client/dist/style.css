@@ -212,10 +212,10 @@
 }
 
 .circle {
-  stroke: #4CC790;
+  stroke: green;
   fill: none;
   stroke-width: 1;
-  stroke-linecap: round;
+  stroke-linecap: square;
   animation: progress 1s ease-out forwards;
 }
 

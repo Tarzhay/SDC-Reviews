@@ -1,4 +1,5 @@
 import React from "react";
+import Donut2 from "./Donut2.jsx";
 
 var starify = (stars) => {
   var stars = Math.round(stars);
@@ -85,16 +86,27 @@ const Review = (props) => {
         {starify(props.review.average)}
         {/* <div className="average">{props.review.average}</div> */}
         <div className="usernameDate">{props.review.username} - {props.review.reviewDate}</div>
+        <br></br>
         <div className="reviewText">{props.review.reviewText}</div>
       </div>
       <br></br>
-      <br></br>
-      <br></br>
-      <div>
-        <div className="attributeRating">{props.review.broadAgeAppeal} Broad age appeal</div>
-        <div className="attributeRating">{props.review.lengthOfPlay} Length of play</div>
-        <div className="attributeRating">{props.review.quality} Quality</div>
-        <div className="attributeRating">{props.review.value} Value</div>
+      <div className="attributeRatings">
+        <div className="attributeRating">
+          <Donut2 score={props.review.broadAgeAppeal * 20}></Donut2>
+          <div>{props.review.broadAgeAppeal} Broad age appeal</div>
+        </div>
+        <div className="attributeRating">
+          <Donut2 score={props.review.lengthOfPlay * 20}></Donut2>
+          <div>{props.review.lengthOfPlay} Length of play</div>
+        </div>
+        <div className="attributeRating">
+          <Donut2 score={props.review.quality * 20}></Donut2>
+          <div>{props.review.quality} Quality</div>
+        </div>
+        <div className="attributeRating">
+          <Donut2 score={props.review.value * 20}></Donut2>
+          <div>{props.review.value} Value</div>
+        </div>
         {/* <div>Helpful: ?</div>
         <div>Report review: ?</div> */}
       </div>

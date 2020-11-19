@@ -87,7 +87,7 @@
 }
 
 .review {
-  display: flex;
+  /* display: flex; */
   border-style: solid;
   margin: 20px;
   padding: 10px;
@@ -102,6 +102,22 @@
   font-size: 10px;
   color: grey;
 }
+
+/* .reviewText {
+  width: 400px;
+} */
+
+.attributeRatings {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
+}
+
+/* .attributeRating {
+  width: 200px
+} */
 
 
 /* .piechart {

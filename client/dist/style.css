@@ -116,6 +116,8 @@
 .review {
   /* display: flex; */
   border-style: solid;
+  border-width: thin;
+  border-color: grey;
   margin: 20px;
   padding: 10px;
 }

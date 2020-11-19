@@ -131,18 +131,22 @@ const Summary = (props) => {
           <div className="tertiaryRating">
             <Donut2 score={qualityAverage.toFixed(1) * 20}/>
             <div>{qualityAverage.toFixed(1)} Quality</div>
+            <div className="mediumGrey">out of 5</div>
           </div>
           <div  className="tertiaryRating">
             <Donut2 score={broadAgeAppealAverage.toFixed(1)  * 20}/>
             <div>{broadAgeAppealAverage.toFixed(1)} Broad Age Appeal</div>
+            <div className="mediumGrey">out of 5</div>
           </div>
           <div  className="tertiaryRating">
             <Donut2 score={lengthOfPlayAverage.toFixed(1)  * 20}/>
             <div>{lengthOfPlayAverage.toFixed(1)} Length of Play</div>
+            <div className="mediumGrey">out of 5</div>
           </div>
           <div className="tertiaryRating">
             <Donut2 score={valueAverage.toFixed(1)  * 20}/>
             <div>{valueAverage.toFixed(1)} Value</div>
+            <div className="mediumGrey">out of 5</div>
           </div>
           <div></div>
           <div></div>

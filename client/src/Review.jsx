@@ -1,15 +1,18 @@
 import React from "react";
 import Donut2 from "./Donut2.jsx";
-import StarRating from "./StarRating/StarRating.jsx"
+import StarRating from "./StarRating/StarRating.jsx";
+import moment from "moment";
 
 const Review = (props) => {
+  var momentized = props.review.reviewDate
+  console.log(moment(props.review.reviewDate, "YYYYMMDD").fromNow())
   return  (
     <div className="review">
       <div>
         <div className="reviewTitle">{props.review.reviewTitle}</div>
         <StarRating score={props.review.average}/>
         {/* <div className="average">{props.review.average}</div> */}
-        <div className="usernameDate">{props.review.username} - {props.review.reviewDate}</div>
+        <div className="usernameDate">{props.review.username} - {moment(props.review.reviewDate, "YYYYMMDD").fromNow()}</div>
         <br></br>
         <div className="reviewText">{props.review.reviewText}</div>
       </div>
@@ -39,5 +42,4 @@ const Review = (props) => {
 }
 
 
-// export default Review;
-export {Review};
+export default Review;

@@ -1,5 +1,5 @@
 import React from "react";
-import {Review} from "./Review.jsx"
+import Review from "./Review.jsx"
 
 const sortTranslator = (sortState, reviewArray) => {
   var sortNewest = (a, b) => {

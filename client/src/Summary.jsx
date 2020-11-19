@@ -1,8 +1,7 @@
 import React from "react";
 import Donut1 from "./Donut1.jsx"
 import Donut2 from "./Donut2.jsx"
-import {starify} from "./Review.jsx";
-import StarRatings from "./StarRating/StarRating.jsx"
+import StarRating from "./StarRating/StarRating.jsx"
 
 const Summary = (props) => {
   var broadAgeAppealTotal = 0;
@@ -108,7 +107,7 @@ const Summary = (props) => {
       </div>
         <div className="primaryRatings">
           <div id="totalAverage">{totalAverage.toFixed(1)}</div>
-          <StarRatings score={totalAverage}/>
+          <StarRating score={totalAverage}/>
           <div className="mediumGrey" id="totalReviews">{props.reviews.length} star ratings</div>
         </div>
         <div className="secondaryRatings">

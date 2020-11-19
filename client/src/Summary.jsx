@@ -53,6 +53,7 @@ const Summary = (props) => {
 
   return (
     <div>
+      <br></br>
       <div className="summary">
       <div></div>
       <div></div>
@@ -103,55 +104,55 @@ const Summary = (props) => {
         <br></br>
         <div>{onesPer}</div>
       </div>
-    </div>
-      <div className="primaryRatings">
-        <br></br>
-        <div id="totalAverage">{totalAverage.toFixed(1)}</div>
-        <div>{starify(Math.round(totalAverage))}</div>
-        <div className="mediumGrey" id="totalReviews">{props.reviews.length} star ratings</div>
       </div>
-      <div className="secondaryRatings">
-        <Donut2 score={wouldRecommendPer}/>
-        <div>{wouldRecommendPer}% would recommend</div>
-        <div className="mediumGrey">{wouldRecommendTotal} recommendations</div>
-      </div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-      <div className="tertiaryRatings">
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
+        <div className="primaryRatings">
+          <div id="totalAverage">{totalAverage.toFixed(1)}</div>
+          <div>{starify(Math.round(totalAverage))}</div>
+          <div className="mediumGrey" id="totalReviews">{props.reviews.length} star ratings</div>
+        </div>
+        <div className="secondaryRatings">
+          <Donut2 score={wouldRecommendPer}/>
+          <div>{wouldRecommendPer}% would recommend</div>
+          <div className="mediumGrey">{wouldRecommendTotal} recommendations</div>
+        </div>
         <div></div>
         <div></div>
-        <div className="tertiaryRating">
-          <Donut2 score={qualityAverage.toFixed(1) * 20}/>
-          <div>{qualityAverage.toFixed(1)} Quality</div>
-        </div>
-        <div  className="tertiaryRating">
-          <Donut2 score={broadAgeAppealAverage.toFixed(1)  * 20}/>
-          <div>{broadAgeAppealAverage.toFixed(1)} Broad Age Appeal</div>
-        </div>
-        <div  className="tertiaryRating">
-          <Donut2 score={lengthOfPlayAverage.toFixed(1)  * 20}/>
-          <div>{lengthOfPlayAverage.toFixed(1)} Length of Play</div>
-        </div>
-        <div className="tertiaryRating">
-          <Donut2 score={valueAverage.toFixed(1)  * 20}/>
-          <div>{valueAverage.toFixed(1)} Value</div>
-        </div>
         <div></div>
         <div></div>
       </div>
       <br></br>
-      <br></br>
-      <div id="flexboxAlignCenterContainer">
-        <div id="reviewButton">Write a review</div>
-      </div>
-      <br></br>
+        <div className="tertiaryRatings">
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <div></div>
+          <div></div>
+          <div className="tertiaryRating">
+            <Donut2 score={qualityAverage.toFixed(1) * 20}/>
+            <div>{qualityAverage.toFixed(1)} Quality</div>
+          </div>
+          <div  className="tertiaryRating">
+            <Donut2 score={broadAgeAppealAverage.toFixed(1)  * 20}/>
+            <div>{broadAgeAppealAverage.toFixed(1)} Broad Age Appeal</div>
+          </div>
+          <div  className="tertiaryRating">
+            <Donut2 score={lengthOfPlayAverage.toFixed(1)  * 20}/>
+            <div>{lengthOfPlayAverage.toFixed(1)} Length of Play</div>
+          </div>
+          <div className="tertiaryRating">
+            <Donut2 score={valueAverage.toFixed(1)  * 20}/>
+            <div>{valueAverage.toFixed(1)} Value</div>
+          </div>
+          <div></div>
+          <div></div>
+        </div>
+        <br></br>
+        <br></br>
+        <div id="flexboxAlignCenterContainer">
+          <div id="reviewButton">Write a review</div>
+        </div>
+        <br></br>
     </div>
   )
 }

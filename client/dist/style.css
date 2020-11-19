@@ -31,11 +31,12 @@
 .progressBarPercents {
   font-size: 12px;
   flex-direction: column;
-  line-height:15px;
+  line-height:9px;
 }
 
 .progressBarBar {
   flex-direction: column;
+  line-height:9px;
 }
 
 .primaryRatings {

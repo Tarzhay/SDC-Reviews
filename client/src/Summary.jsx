@@ -1,4 +1,5 @@
 import React from "react";
+// import Donut from "./Donut.jsx"
 import {starify} from "./Review.jsx";
 
 const Summary = (props) => {
@@ -102,11 +103,13 @@ const Summary = (props) => {
       </div>
     </div>
       <div className="primaryRatings">
-        <div>{totalAverage.toFixed(1)}</div>
+        <br></br>
+        <div id="totalAverage">{totalAverage.toFixed(1)}</div>
         <div>{starify(Math.round(totalAverage))}</div>
-        <div>{props.reviews.length} star ratings</div>
+        <div id="totalReviews">{props.reviews.length} star ratings</div>
       </div>
       <div className="secondaryRatings">
+        {/* <Donut score={wouldRecommendPer}/> */}
         <div>{wouldRecommendPer}% would recommend</div>
         <div>{broadAgeAppealAverage.toFixed(1)} Broad Age Appeal</div>
         <div>{lengthOfPlayAverage.toFixed(1)} Length of Play</div>

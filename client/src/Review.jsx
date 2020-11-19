@@ -80,18 +80,24 @@ var starify = (stars) => {
 const Review = (props) => {
   return  (
     <div className="review">
-      {starify(props.review.average)}
-      <div className="title">{props.review.reviewTitle}</div>
-      <div className="average">{props.review.average}</div>
-      <div className="username">{props.review.username}</div>
-      <div className="date">{props.review.reviewDate}</div>
-      <div className="reviewText">{props.review.reviewText}</div>
-      <div className="attributeRating">{props.review.broadAgeAppeal}</div>
-      <div className="attributeRating">{props.review.lengthOfPlay}</div>
-      <div className="attributeRating">{props.review.quality}</div>
-      <div className="attributeRating">{props.review.value}</div>
-      {/* <div>Helpful: ?</div>
-      <div>Report review: ?</div> */}
+      <div>
+        <div className="reviewTitle">{props.review.reviewTitle}</div>
+        {starify(props.review.average)}
+        {/* <div className="average">{props.review.average}</div> */}
+        <div className="usernameDate">{props.review.username} - {props.review.reviewDate}</div>
+        <div className="reviewText">{props.review.reviewText}</div>
+      </div>
+      <br></br>
+      <br></br>
+      <br></br>
+      <div>
+        <div className="attributeRating">{props.review.broadAgeAppeal} Broad age appeal</div>
+        <div className="attributeRating">{props.review.lengthOfPlay} Length of play</div>
+        <div className="attributeRating">{props.review.quality} Quality</div>
+        <div className="attributeRating">{props.review.value} Value</div>
+        {/* <div>Helpful: ?</div>
+        <div>Report review: ?</div> */}
+      </div>
     </div>
   )
 }

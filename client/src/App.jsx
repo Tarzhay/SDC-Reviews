@@ -10,8 +10,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      allReviews: [],
-      displayedReviews: [],
+      allReviews: [1, 2, 3],
+      displayedReviews: [1, 2],
       sortBy: "most recent",
       filterBy: "all ratings",
       verifiedPurchase: false

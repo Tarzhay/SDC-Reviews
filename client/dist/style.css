@@ -163,6 +163,10 @@
   color: grey;
 }
 
+.greenText {
+  color: green;
+}
+
 #totalAverage {
   font-size: 40px;
   font-weight: bold;

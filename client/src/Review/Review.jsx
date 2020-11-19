@@ -4,15 +4,20 @@ import StarRating from "../StarRating/StarRating.jsx";
 import moment from "moment";
 
 const Review = (props) => {
-  var momentized = props.review.reviewDate
-  console.log(moment(props.review.reviewDate, "YYYYMMDD").fromNow())
+  var verifyText = "";
+  var reviewDateText = moment(props.review.reviewDate, "YYYYMMDD").fromNow();
+  if (props.review.verified === 1) {
+    verifyText = "Verified purchaser"
+    reviewDateText += ", "
+  }
+
   return  (
     <div className="review">
       <div>
         <div className="reviewTitle">{props.review.reviewTitle}</div>
         <StarRating score={props.review.average}/>
         {/* <div className="average">{props.review.average}</div> */}
-        <div className="usernameDate">{props.review.username} - {moment(props.review.reviewDate, "YYYYMMDD").fromNow()}</div>
+  <div className="usernameDate">{props.review.username} - {reviewDateText} <span className="greenText">{verifyText}</span></div>
         <br></br>
         <div className="reviewText">{props.review.reviewText}</div>
       </div>

@@ -45,7 +45,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <h3 className="appTitle">Guest Ratings and Reviews</h3>
+        <h3 className="appTitle">Guest Ratings & Reviews</h3>
         <Summary reviews={this.state.allReviews}/>
         <br></br>
         <Filterer handleInputChange={this.handleInputChange}/>

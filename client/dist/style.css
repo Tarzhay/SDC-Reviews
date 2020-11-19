@@ -9,6 +9,7 @@
 
 .appTitle {
   text-align: center;
+  font-weight: bolder;
 }
 
 .summary {
@@ -120,27 +121,13 @@
 } */
 
 
-/* .piechart {
-  margin-top: 300px;
-  display: block;
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  background-image: conic-gradient(
-    pink 70deg,
-    lightblue 0 235deg,
-    orange 0);
-}
-
-body, .piechart {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
 .w3-container {
   color: rgba(0, 0, 0, 0)
+}
+
+.mediumGrey {
+  font-size: 10px;
+  color: grey;
 }
 
 #totalAverage {
@@ -149,11 +136,42 @@ body, .piechart {
   text-align: center;
 }
 
-#totalReviews {
-  font-size: 14px;
+#reviewButtonT {
+  display: block;
+  content: "";
+  position: absolute;
+  border: 5px solid transparent;
+  border-radius: 5px;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  opacity: 0;
+  animation-duration: 500ms;
 }
 
+#reviewButton {
+  background-color: #E80018; /* Green */
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  /* display: inline-block; */
+  font-size: 12px;
+  border-radius: 8px;
+  margin: 0 auto;
+  position: absolute;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
 
+#flexboxAlignCenterContainer {
+  display: flex;
+  justify-content: center;
+}
+
+/* FOR DONUT */
 
 .circular-chart {
   display: block;
@@ -165,7 +183,7 @@ body, .piechart {
 .circle {
   stroke: #4CC790;
   fill: none;
-  stroke-width: 2.8;
+  stroke-width: 1;
   stroke-linecap: round;
   animation: progress 1s ease-out forwards;
 }
@@ -180,96 +198,4 @@ body, .piechart {
 /* svg {
   transform: rotate(-90deg);
 } */
-
-/* FOR DOUGHNUT */
-
-.donut {
-  --donut-size: 30px;
-  --donut-border-width: 5px;
-  --donut-spacing: 0;
-  --donut-spacing-color: 255, 255, 255;
-  --donut-spacing-deg: calc(1deg * var(--donut-spacing));
-  border-radius: 50%;
-  height: var(--donut-size);
-  margin: 0px;
-  position: relative;
-  width: var(--donut-size);
-}
-
-.donut__label {
-  left: 50%;
-  line-height: 1.5;
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 80%;
-}
-
-.donut__label__heading {
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.donut__slice {
-  height: 100%;
-  position: absolute;
-  width: 100%;
-}
-
-.donut__slice::before,
-.donut__slice::after {
-  border: var(--donut-border-width) solid rgba(0, 0, 0, 0);
-  border-radius: 50%;
-  content: '';
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  width: 100%;
-}
-
-.donut__slice::before {
-  border-width: calc(var(--donut-border-width) + 1px);
-  box-shadow: 0 0 1px 0 rgba(var(--donut-spacing-color), calc(100 * var(--donut-spacing)));
-}
-
-.donut__slice__first {
-  --first-start: 0;
-}
-
-.donut__slice__first::before {
-  border-top-color: rgba(var(--donut-spacing-color), calc(100 * var(--donut-spacing)));
-  -webkit-transform: rotate(calc(360deg * var(--first-start) + 45deg));
-          transform: rotate(calc(360deg * var(--first-start) + 45deg));
-}
-
-.donut__slice__first::after {
-  border-top-color: green;
-  border-right-color: rgba(0, 128, 0, calc(100 * (var(--first) - .25)));
-  border-bottom-color: rgba(0, 128, 0, calc(100 * (var(--first) - .5)));
-  border-left-color: rgba(0, 128, 0, calc(100 * (var(--first) - .75)));
-  -webkit-transform: rotate(calc(360deg * var(--first-start) + 45deg + var(--donut-spacing-deg)));
-          transform: rotate(calc(360deg * var(--first-start) + 45deg + var(--donut-spacing-deg)));
-}
-
-.donut__slice__second {
-  --second-start: calc(var(--first));
-  --second-check: max(calc(var(--second-start) - .5), 0);
-  -webkit-clip-path: inset(0 calc(50% * (var(--second-check) / var(--second-check))) 0 0);
-          clip-path: inset(0 calc(50% * (var(--second-check) / var(--second-check))) 0 0);
-}
-
-
-.donut__slice__second::after {
-  border-top-color: white;
-  border-right-color: rgba(255, 200, 32, calc(100 * (var(--second) - .25)));
-  border-bottom-color: rgba(255, 200, 32, calc(100 * (var(--second) - .5)));
-  border-left-color: rgba(255, 200, 32, calc(100 * (var(--second) - .75)));
-  -webkit-transform: rotate(calc(360deg * var(--second-start) + 45deg + var(--donut-spacing-deg)));
-          transform: rotate(calc(360deg * var(--second-start) + 45deg + var(--donut-spacing-deg)));
-}
 

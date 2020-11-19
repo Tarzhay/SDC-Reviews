@@ -1,10 +1,8 @@
 import React from "react";
 
 const Donut2 = ({score}) => {
-  console.log(score);
   var usedScore = score / 100 * 30;
   var usedScoreString = usedScore.toString() + ", 30";
-  console.log(usedScoreString);
   return (
     <div className="donut2">
       <svg viewBox="0 0 12.5 12.5" className="circular-chart">

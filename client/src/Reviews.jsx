@@ -43,32 +43,38 @@ const sortTranslator = (sortState, reviewArray) => {
   }
 }
 
-const filterTranslator = (filterState, reviewArray) => {
+const filterTranslator = (verifiedState, filterState, reviewArray) => {
+  var currentArray = reviewArray
+  if (verifiedState === true) {
+    currentArray = reviewArray.filter(review => review.verified === 1)
+  }
   if (filterState === "all ratings") {
-    return reviewArray;
+    return currentArray;
   } else if (filterState === "5 stars") {
-    return reviewArray.filter(review => Math.round(review.average) === 5)
+    return currentArray.filter(review => Math.round(review.average) === 5)
   } else if (filterState === "4 stars") {
-    return reviewArray.filter(review => Math.round(review.average) === 4)
+    return currentArray.filter(review => Math.round(review.average) === 4)
   } else if (filterState === "3 stars") {
-    return reviewArray.filter(review => Math.round(review.average) === 3)
+    return currentArray.filter(review => Math.round(review.average) === 3)
   } else if (filterState === "2 stars") {
-    return reviewArray.filter(review => Math.round(review.average) === 2)
+    return currentArray.filter(review => Math.round(review.average) === 2)
   } else if (filterState === "1 star") {
-    return reviewArray.filter(review => Math.round(review.average) === 1)
+    return currentArray.filter(review => Math.round(review.average) === 1)
   }
 }
 
-const sortAndFilter = (sortState, filterState, reviewArray) => {
+const sortAndFilter = (sortState, verifiedState, filterState, reviewArray) => {
+  console.log(verifiedState);
+
   var sortedArray = sortTranslator(sortState, reviewArray);
-  var result = filterTranslator(filterState, sortedArray);
+  var result = filterTranslator(verifiedState, filterState, sortedArray);
   console.log(result);
   return result;
 }
 
-const Reviews = ({sortBy, filterBy, displayedReviews}) => (
+const Reviews = ({sortBy, verifiedPurchase, filterBy, displayedReviews}) => (
   <div className="reviews">
-    {sortAndFilter(sortBy, filterBy, displayedReviews).map((review, index) =>
+    {sortAndFilter(sortBy, verifiedPurchase, filterBy, displayedReviews).map((review, index) =>
     <Review key={index} review={review}/>
     )}
   </div>

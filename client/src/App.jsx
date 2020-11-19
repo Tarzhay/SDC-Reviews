@@ -10,8 +10,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      allReviews: [1, 2, 3],
-      displayedReviews: [1, 2],
+      allReviews: [],
+      displayedReviews: [],
       sortBy: "most recent",
       filterBy: "all ratings",
       verifiedPurchase: false
@@ -52,7 +52,7 @@ class App extends React.Component {
         <br></br>
         <Filterer handleInputChange={this.handleInputChange}/>
         <br></br>
-        <Reviews sortBy={this.state.sortBy} filterBy={this.state.filterBy} displayedReviews={this.state.displayedReviews}/>
+        <Reviews sortBy={this.state.sortBy} verifiedPurchase={this.state.verifiedPurchase} filterBy={this.state.filterBy} displayedReviews={this.state.displayedReviews}/>
       </div>
     )
   }

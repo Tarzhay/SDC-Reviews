@@ -1,6 +1,6 @@
 import React from "react";
-import Donut2 from "./Donut2.jsx";
-import StarRating from "./StarRating/StarRating.jsx";
+import Donut2 from "../Donut2.jsx";
+import StarRating from "../StarRating/StarRating.jsx";
 import moment from "moment";
 
 const Review = (props) => {

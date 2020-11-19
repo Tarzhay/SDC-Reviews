@@ -64,8 +64,6 @@ const filterTranslator = (verifiedState, filterState, reviewArray) => {
 }
 
 const sortAndFilter = (sortState, verifiedState, filterState, reviewArray) => {
-  console.log(verifiedState);
-
   var sortedArray = sortTranslator(sortState, reviewArray);
   var result = filterTranslator(verifiedState, filterState, sortedArray);
   console.log(result);

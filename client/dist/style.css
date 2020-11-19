@@ -203,6 +203,23 @@
   transform: translateY(-50%);
 }
 
+#reviewButton:hover {
+  background-color: #c21a2b; /* Green */
+  cursor: pointer;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  /* display: inline-block; */
+  font-size: 12px;
+  border-radius: 8px;
+  margin: 0 auto;
+  position: absolute;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
 #flexboxAlignCenterContainer {
   display: flex;
   justify-content: center;

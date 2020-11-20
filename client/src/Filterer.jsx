@@ -1,4 +1,5 @@
 import React from "react";
+import Modal from "./Modal.jsx"
 
 const Filterer = (props) => {
   const sortByOptions = ["most recent", "highest rated", "lowest rated", "most helpful"];
@@ -27,6 +28,7 @@ const Filterer = (props) => {
       </label>
       <br></br>
       <br></br>
+      {/* <Modal /> */}
     </div>
   )
 }

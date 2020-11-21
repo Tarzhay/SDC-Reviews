@@ -3,6 +3,7 @@ import axios from "axios";
 import Summary from "./Summary.jsx";
 import Filterer from "./Filterer.jsx";
 import Reviews from "./Reviews.jsx";
+import StarRating from "./StarRating/StarRating.jsx";
 
 
 class App extends React.Component {
@@ -44,11 +45,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h3>Guest Ratings and Reviews</h3>
+      <div className="app">
+        <h3 className="appTitle">Guest Ratings & Reviews</h3>
+        <StarRating />
         <Summary reviews={this.state.allReviews}/>
+        <br></br>
         <Filterer handleInputChange={this.handleInputChange}/>
-        <Reviews sortBy={this.state.sortBy} filterBy={this.state.filterBy} displayedReviews={this.state.displayedReviews}/>
+        <br></br>
+        <Reviews sortBy={this.state.sortBy} verifiedPurchase={this.state.verifiedPurchase} filterBy={this.state.filterBy} displayedReviews={this.state.displayedReviews}/>
       </div>
     )
   }

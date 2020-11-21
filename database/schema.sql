@@ -29,7 +29,7 @@ CREATE TABLE reviews (
   productName VARCHAR(255),
   reviewTitle VARCHAR(255),
   reviewText VARCHAR(1000),
-  reviewDate DATE DEFAULT (CURRENT_DATE),
+  reviewDate DATE,
   broadAgeAppeal INT,
   lengthOfPlay INT,
   quality INT,

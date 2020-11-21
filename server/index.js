@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 8080;
+const port = 3001;
 const path = require('path');
 const db = require('../database/index.js');
 const bodyParser = require('body-parser');

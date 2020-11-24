@@ -31,7 +31,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`/api/reviews${window.location.pathname}`)
+    axios.get(`http://localhost:3003/api/reviews${window.location.pathname}`)
     .then((response) => {
       this.setState({
         allReviews: response.data,

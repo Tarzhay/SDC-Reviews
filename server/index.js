@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3001;
+const port = 3003;
 const path = require('path');
 const db = require('../database/index.js');
 const bodyParser = require('body-parser');
@@ -8,7 +8,7 @@ const _ = require('underscore');
 
 app.use(bodyParser.json());
 
-app.use(express.static(path.join(__dirname, '../client/dist')));
+app.use(express.static(path.join(__dirname, '/../client/dist')));
 
 app.get('/:id', (req, res) => {
   res.sendFile(path.join(__dirname + '/../client/dist/index.html'));

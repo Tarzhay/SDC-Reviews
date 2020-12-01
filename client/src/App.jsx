@@ -4,6 +4,8 @@ import Summary from "./Summary.jsx";
 import Filterer from "./Filterer.jsx";
 import Reviews from "./Reviews.jsx";
 import StarRating from "./StarRating/StarRating.jsx";
+// import './style.css';
+import {GlobalStyle} from './Style.js';
 
 
 class App extends React.Component {
@@ -46,6 +48,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
+        <GlobalStyle />
         <h3 className="appTitle">Guest Ratings & Reviews</h3>
         <StarRating />
         <Summary reviews={this.state.allReviews}/>

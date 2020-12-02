@@ -20,24 +20,24 @@
 
   `Default Response`: 201 CREATED
 
-  `[
-    {
-      "id": 1,
-      "productId": 1,
-      "username": "Whale, baleen",
-      "productName": "Settlers of Gadol",
-      "reviewTitle": "Aliquam qu",
-      "reviewText": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
-      "reviewDate": "2019-09-06T07:00:00.000Z",
-      "broadAgeAppeal": 2,
-      "lengthOfPlay": 2,
-      "quality": 2,
-      "value": 2,
-      "average": 2,
-      "wouldRecommend": 1,
-      "verified": 1
-    }
-  ]`
+    `[
+      {
+        "id": 1,
+        "productId": 1,
+        "username": "Whale, baleen",
+        "productName": "Settlers of Gadol",
+        "reviewTitle": "Aliquam qu",
+        "reviewText": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+        "reviewDate": "2019-09-06T07:00:00.000Z",
+        "broadAgeAppeal": 2,
+        "lengthOfPlay": 2,
+        "quality": 2,
+        "value": 2,
+        "average": 2,
+        "wouldRecommend": 1,
+        "verified": 1
+      }
+    ]`
 
    `Unable to post review`: 400 BAD REQUEST
 

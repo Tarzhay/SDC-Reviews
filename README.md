@@ -20,7 +20,7 @@ CREATE
 
   Default Response: 201 CREATED
 
-   [
+  [
     {
       "id": 1,
       "productId": 1,
@@ -37,7 +37,7 @@ CREATE
       "wouldRecommend": 1,
       "verified": 1
     }
-   ]
+  ]
 
    Unable to post review: 400 BAD REQUEST
 
@@ -48,6 +48,7 @@ READ
     productId - integer
 
   Default Response: 200 OK
+
   [
     {
       "id": 5,

@@ -1,9 +1,9 @@
 # SDC Reviews - CRUD APIs
 
-CREATE
-  POST /api/reviews/:id
+**CREATE**
+  `POST` /api/reviews/:id
 
-  Parameters
+  `Parameters`
     productId - integer
     username - string
     productName - string
@@ -20,7 +20,7 @@ CREATE
 
   Default Response: 201 CREATED
 
-  [
+  `[
     {
       "id": 1,
       "productId": 1,
@@ -37,19 +37,19 @@ CREATE
       "wouldRecommend": 1,
       "verified": 1
     }
-  ]
+  ]`
 
    Unable to post review: 400 BAD REQUEST
 
-READ
-  GET /api/reviews/:id
+**READ**
+  `GET` /api/reviews/:id
 
-  Parameters
+  `Parameters`
     productId - integer
 
   Default Response: 200 OK
 
-  [
+  `[
     {
       "id": 5,
       "productId": 1,
@@ -82,14 +82,14 @@ READ
       "wouldRecommend": null,
       "verified": 1
     }
-  ]
+  ]`
 
   Unable to Retreive Reviews: 400 BAD REQUEST
 
-UPDATE
-  PATCH /api/reviews/:id/:id
+**UPDATE**
+  `PATCH` /api/reviews/:id/:id
 
-  Parameters
+  `Parameters`
     id - integer
     productId - integer
     username - string
@@ -104,7 +104,7 @@ UPDATE
 
     Default Response: 200 OK
 
-    [
+    `[
       {
         "id": 6,
         "productId": 1,
@@ -121,20 +121,20 @@ UPDATE
         "wouldRecommend": null,
         "verified": 1
       }
-    ]
+    ]`
 
     Unable to update review: 400 BAD REQUEST
 
-DELETE
-  DELETE /api/reviews/:id/:id
+**DELETE**
+  `DELETE` /api/reviews/:id/:id
 
-  Parameters
+  `Parameters`
     id - integer
     productId - integer
 
   Default Response: 200 OK
 
-    [
+   ` [
       {
         "id": 6,
         "productId": 1,
@@ -151,7 +151,6 @@ DELETE
         "wouldRecommend": null,
         "verified": 1
       }
-    ]
+    ]`
 
     Unable to delete review: 400 BAD REQUEST
-

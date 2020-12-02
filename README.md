@@ -1,6 +1,6 @@
 # SDC Reviews - CRUD APIs
 
-**CREATE**
+**CREATE** <br />
   `POST` /api/reviews/:id
 
   `Parameters`
@@ -41,7 +41,7 @@
 
    Unable to post review: 400 BAD REQUEST
 
-**READ**
+**READ** <br />
   `GET` /api/reviews/:id
 
   `Parameters`
@@ -86,7 +86,7 @@
 
   Unable to Retreive Reviews: 400 BAD REQUEST
 
-**UPDATE**
+**UPDATE** <br />
   `PATCH` /api/reviews/:id/:id
 
   `Parameters`
@@ -125,7 +125,7 @@
 
     Unable to update review: 400 BAD REQUEST
 
-**DELETE**
+**DELETE** <br />
   `DELETE` /api/reviews/:id/:id
 
   `Parameters`
@@ -134,7 +134,7 @@
 
   Default Response: 200 OK
 
-   ` [
+   [
       {
         "id": 6,
         "productId": 1,
@@ -151,6 +151,6 @@
         "wouldRecommend": null,
         "verified": 1
       }
-    ]`
+    ]
 
     Unable to delete review: 400 BAD REQUEST

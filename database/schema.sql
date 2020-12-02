@@ -6,24 +6,22 @@ CREATE DATABASE reviews;
 
 USE reviews;
 
--- CREATE TABLE users (
---   id INT AUTO_INCREMENT,
---   userId INT,
---   username VARCHAR(25),
---   PRIMARY KEY (id)
--- );
+CREATE TABLE users (
+  id INT AUTO_INCREMENT,
+  userId INT,
+  username VARCHAR(25),
+  PRIMARY KEY (id)
+);
 
--- CREATE TABLE products (
---   id INT AUTO_INCREMENT,
---   productId INT,
---   productName VARCHAR(100),
---   PRIMARY KEY (id)
--- );
+CREATE TABLE products (
+  id INT AUTO_INCREMENT,
+  productId INT,
+  productName VARCHAR(100),
+  PRIMARY KEY (id)
+);
 
 CREATE TABLE reviews (
   id INT AUTO_INCREMENT,
-  -- userId INT,
-  -- productId INT,
   productId INT,
   username VARCHAR(255),
   productName VARCHAR(255),
@@ -37,6 +35,7 @@ CREATE TABLE reviews (
   average DECIMAL(3, 2),
   wouldRecommend INT,
   verified INT,
+  userId INT,
   -- FOREIGN KEY (userId)
   --   REFERENCES users(id),
   -- FOREIGN KEY (productId)
@@ -44,21 +43,21 @@ CREATE TABLE reviews (
   PRIMARY KEY (id)
 );
 
--- INSERT INTO users (userId, username) values (10001, 'maxeinhorn');
--- INSERT INTO users (userId, username) values (10002, 'maximus');
--- INSERT INTO users (userId, username) values (10003, 'maximillius');
--- INSERT INTO users (userId, username) values (10004, 'maximillian');
--- INSERT INTO users (userId, username) values (10005, 'maxwell');
--- INSERT INTO users (userId, username) values (10006, 'maximusprime');
--- INSERT INTO users (userId, username) values (10007, 'max');
+INSERT INTO users (userId, username) values (10001, 'maxeinhorn');
+INSERT INTO users (userId, username) values (10002, 'maximus');
+INSERT INTO users (userId, username) values (10003, 'maximillius');
+INSERT INTO users (userId, username) values (10004, 'maximillian');
+INSERT INTO users (userId, username) values (10005, 'maxwell');
+INSERT INTO users (userId, username) values (10006, 'maximusprime');
+INSERT INTO users (userId, username) values (10007, 'max');
 
 
--- INSERT INTO products (productID, productName) values (100001, 'Settlers of Catan');
--- INSERT INTO products (productID, productName) values (100002, 'Settlers of Bhutan');
--- INSERT INTO products (productID, productName) values (100003, 'Settlers of Gadol');
--- INSERT INTO products (productID, productName) values (100004, 'Settlers of Mars');
--- INSERT INTO products (productID, productName) values (100005, 'Settlers of Antarctica');
--- INSERT INTO products (productID, productName) values (100006, 'Settlers of Catalan');
+INSERT INTO products (productID, productName) values (100001, 'Settlers of Catan');
+INSERT INTO products (productID, productName) values (100002, 'Settlers of Bhutan');
+INSERT INTO products (productID, productName) values (100003, 'Settlers of Gadol');
+INSERT INTO products (productID, productName) values (100004, 'Settlers of Mars');
+INSERT INTO products (productID, productName) values (100005, 'Settlers of Antarctica');
+INSERT INTO products (productID, productName) values (100006, 'Settlers of Catalan');
 
 INSERT INTO reviews (productId, username, productName, reviewTitle, reviewText, reviewDate, broadAgeAppeal, lengthOfPlay, quality, value, average, wouldRecommend, verified) values ('0',  'Western lowland gorilla',  'Settlers of Catan',  'Duis conse',  'Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.',  '2020-04-29',  5,  2,  3,  4,  3.5,  NULL,  1);
 INSERT INTO reviews (productId, username, productName, reviewTitle, reviewText, reviewDate, broadAgeAppeal, lengthOfPlay, quality, value, average, wouldRecommend, verified) values ('0',  'Flightless cormorant',  'Settlers of Catan',  'Nam nulla.',  'Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula.',  '2020-09-20',  3,  4,  1,  3,  2.75,  NULL,  0);

@@ -18,7 +18,7 @@
     wouldRecommend - integer
     verified - integer
 
-  Default Response 201 CREATED
+  `Default Response`: 201 CREATED
 
   `[
     {
@@ -39,7 +39,7 @@
     }
   ]`
 
-   Unable to post review: 400 BAD REQUEST
+   `Unable to post review`: 400 BAD REQUEST
 
 **READ** <br />
   `GET` /api/reviews/:id
@@ -47,7 +47,7 @@
   `Parameters`
     productId - integer
 
-  Default Response: 200 OK
+  `Default Response`: 200 OK
 
     `[
       {
@@ -68,7 +68,7 @@
       }
     ]`
 
-  Unable to Retreive Reviews: 400 BAD REQUEST
+  `Unable to Retreive Reviews`: 400 BAD REQUEST
 
 **UPDATE** <br />
   `PATCH` /api/reviews/:id/:id
@@ -86,7 +86,7 @@
     average - decimal
     wouldRecommend - integer
 
-    Default Response: 200 OK
+    `Default Response`: 200 OK
 
     `[
       {
@@ -107,7 +107,7 @@
       }
     ]`
 
-    Unable to update review: 400 BAD REQUEST
+  `Unable to update review`: 400 BAD REQUEST
 
 **DELETE** <br />
   `DELETE` /api/reviews/:id/:id
@@ -120,7 +120,7 @@
     }
     `
 
-    Default Response: 200 OK
+  `Default Response`: 200 OK
 
     `[
       {
@@ -141,4 +141,4 @@
       }
     ]`
 
-    Unable to delete review: 400 BAD REQUEST
+  `Unable to delete review`: 400 BAD REQUEST

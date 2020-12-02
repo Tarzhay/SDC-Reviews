@@ -18,7 +18,7 @@
     wouldRecommend - integer
     verified - integer
 
-  Default Response: 201 CREATED
+  Default Response 201 CREATED
 
   `[
     {
@@ -49,40 +49,24 @@
 
   Default Response: 200 OK
 
-  `[
-    {
-      "id": 5,
-      "productId": 1,
-      "username": "Whale, baleen",
-      "productName": "Settlers of Gadol",
-      "reviewTitle": "Aliquam qu",
-      "reviewText": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
-      "reviewDate": "2019-09-06T07:00:00.000Z",
-      "broadAgeAppeal": 2,
-      "lengthOfPlay": 2,
-      "quality": 2,
-      "value": 2,
-      "average": 2,
-      "wouldRecommend": 1,
-      "verified": 1
-    },
-    {
-      "id": 6,
-      "productId": 1,
-      "username": "Cobra (unidentified)",
-      "productName": "Settlers of Gadol",
-      "reviewTitle": "Integer al",
-      "reviewText": "Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci.",
-      "reviewDate": "2019-09-16T07:00:00.000Z",
-      "broadAgeAppeal": 5,
-      "lengthOfPlay": 1,
-      "quality": 2,
-      "value": 1,
-      "average": 2.25,
-      "wouldRecommend": null,
-      "verified": 1
-    }
-  ]`
+    `[
+      {
+        "id": 6,
+        "productId": 1,
+        "username": "Cobra (unidentified)",
+        "productName": "Settlers of Gadol",
+        "reviewTitle": "Integer al",
+        "reviewText": "Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci.",
+        "reviewDate": "2019-09-16T07:00:00.000Z",
+        "broadAgeAppeal": 5,
+        "lengthOfPlay": 1,
+        "quality": 2,
+        "value": 1,
+        "average": 2.25,
+        "wouldRecommend": null,
+        "verified": 1
+      }
+    ]`
 
   Unable to Retreive Reviews: 400 BAD REQUEST
 
@@ -129,12 +113,16 @@
   `DELETE` /api/reviews/:id/:id
 
   `Parameters`
-    id - integer
-    productId - integer
+    `
+    {
+      "id": 1,
+      "productId": 1
+    }
+    `
 
-  Default Response: 200 OK
+    Default Response: 200 OK
 
-   [
+    `[
       {
         "id": 6,
         "productId": 1,
@@ -151,6 +139,6 @@
         "wouldRecommend": null,
         "verified": 1
       }
-    ]
+    ]`
 
     Unable to delete review: 400 BAD REQUEST

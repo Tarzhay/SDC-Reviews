@@ -113,12 +113,8 @@
   `DELETE` /api/reviews/:id/:id
 
   `Parameters`
-    `
-    {
-      "id": 1,
-      "productId": 1
-    }
-    `
+      id - integer,
+      productId - integer
 
   `Default Response`: 200 OK
 

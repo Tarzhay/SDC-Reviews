@@ -91,7 +91,7 @@
 ### Delete a review for a product <br />
   `DELETE` /api/reviews/:id/:id
 
-**Path Parameters**
+**Path Parameters**<br />
 `id` Product ID<br />
 `id` Review ID
 

@@ -4,7 +4,7 @@
   `POST` /api/reviews/:id
 
 **Path Parameters**<br />
-*`id` Product ID
+`id` Product ID
 
   `Default Response`: 201 CREATED
 
@@ -33,7 +33,7 @@
   `GET` /api/reviews/:id
 
 **Path Parameters**<br />
-*`id` Product ID
+`id` Product ID
 
   `Default Response`: 200 OK
 
@@ -62,8 +62,8 @@
   `PATCH` /api/reviews/:id/:id
 
 **Path Parameters**<br />
-*`id` Product ID
-*`id` Review ID
+`id` Product ID<br />
+`id` Review ID
 
     `Default Response`: 200 OK
 
@@ -92,8 +92,8 @@
   `DELETE` /api/reviews/:id/:id
 
 **Path Parameters**
-*`id` Product ID
-*`id` Review ID
+`id` Product ID<br />
+`id` Review ID
 
   `Default Response`: 200 OK
 

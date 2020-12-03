@@ -1,10 +1,10 @@
 # SDC Reviews - CRUD APIs
 
 ### Add a review for a product <br />
-`POST` /api/reviews/:id
+`POST` /api/reviews/:productId
 
 **Path Parameters**<br />
-`id` Product ID
+`productId` Product ID
 
 `Default Response`: 201 CREATED<br />
 `Request Body`: Expects JSON with the following keys<br />
@@ -29,10 +29,10 @@
 `Unable to post review`: 400 BAD REQUEST
 
 ### Get review data for product <br />
-`GET` /api/reviews/:id
+`GET` /api/reviews/:productId
 
 **Path Parameters**<br />
-`id` Product ID
+`productId` Product ID
 
 `Default Response`: 200 OK<br />
 `RETURNS`<br />
@@ -57,11 +57,11 @@
 `Unable to Retreive Reviews`: 400 BAD REQUEST
 
 ### Update a review for a product <br />
-`PATCH` /api/reviews/:id/:id
+`PATCH` /api/reviews/:productId/:reviewId
 
 **Path Parameters**<br />
-`id` Product ID<br />
-`id` Review ID
+`productId` Product ID<br />
+`reviewId` Review ID
 
 `Default Response`: 200 OK<br />
 `Request Body` Expects JSON with any of the following keys<br />
@@ -89,8 +89,8 @@
   `DELETE` /api/reviews/:id/:id
 
 **Path Parameters**<br />
-`id` Product ID<br />
-`id` Review ID<br />
+`productId` Product ID<br />
+`reviewId` Review ID<br />
 
 `Default Response`: 200 OK<br />
 `Request Body` Expects JSON with the following two keys<br />

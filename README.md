@@ -3,7 +3,7 @@
 **CREATE** <br />
   `POST` /api/reviews/:id
 
-**Path Parameters**
+**Path Parameters**<br />
 *`id` Product ID
 
   `Default Response`: 201 CREATED
@@ -32,8 +32,8 @@
 **READ** <br />
   `GET` /api/reviews/:id
 
-  `Parameters`
-    productId - integer
+**Path Parameters**<br />
+*`id` Product ID
 
   `Default Response`: 200 OK
 
@@ -61,7 +61,7 @@
 **UPDATE** <br />
   `PATCH` /api/reviews/:id/:id
 
-**Path Parameters**
+**Path Parameters**<br />
 *`id` Product ID
 *`id` Review ID
 

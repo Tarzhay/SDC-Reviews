@@ -29,7 +29,7 @@
 
    `Unable to post review`: 400 BAD REQUEST
 
-**READ** <br />
+### READ <br />
   `GET` /api/reviews/:id
 
 **Path Parameters**<br />
@@ -58,7 +58,7 @@
 
   `Unable to Retreive Reviews`: 400 BAD REQUEST
 
-**UPDATE** <br />
+### UPDATE <br />
   `PATCH` /api/reviews/:id/:id
 
 **Path Parameters**<br />
@@ -88,7 +88,7 @@
 
   `Unable to update review`: 400 BAD REQUEST
 
-**DELETE** <br />
+### DELETE <br />
   `DELETE` /api/reviews/:id/:id
 
 **Path Parameters**

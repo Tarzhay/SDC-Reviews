@@ -3,20 +3,8 @@
 **CREATE** <br />
   `POST` /api/reviews/:id
 
-  `Parameters`
-    productId - integer
-    username - string
-    productName - string
-    reviewTitle - string
-    reviewText - string
-    reviewDate - date
-    broadAgeAppeal - integer
-    lengthOfPlay - integer
-    quality - integer
-    value - integer
-    average - decimal
-    wouldRecommend - integer
-    verified - integer
+**Path Parameters**
+*`id` Product ID
 
   `Default Response`: 201 CREATED
 
@@ -73,18 +61,9 @@
 **UPDATE** <br />
   `PATCH` /api/reviews/:id/:id
 
-  `Parameters`
-    id - integer
-    productId - integer
-    username - string
-    reviewTitle - string
-    reviewText - string
-    broadAgeAppeal - integer
-    lengthOfPlay - integer
-    quality - integer
-    value - integer
-    average - decimal
-    wouldRecommend - integer
+**Path Parameters**
+*`id` Product ID
+*`id` Review ID
 
     `Default Response`: 200 OK
 
@@ -112,9 +91,9 @@
 **DELETE** <br />
   `DELETE` /api/reviews/:id/:id
 
-  `Parameters`
-      id - integer,
-      productId - integer
+**Path Parameters**
+*`id` Product ID
+*`id` Review ID
 
   `Default Response`: 200 OK
 

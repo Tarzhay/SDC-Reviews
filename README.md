@@ -7,7 +7,7 @@
 `id` Product ID
 
 `Default Response`: 201 CREATED<br />
-`Request Body`: Expects JSON<br />
+`Request Body`: Expects JSON with the following keys<br />
 ```json
     {
       "productId": 1,

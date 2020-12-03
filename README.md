@@ -1,6 +1,6 @@
 # SDC Reviews - CRUD APIs
 
-### CREATE <br />
+### Add a review for a product <br />
   `POST` /api/reviews/:id
 
 **Path Parameters**<br />
@@ -29,7 +29,7 @@
 
    `Unable to post review`: 400 BAD REQUEST
 
-### READ <br />
+### Get review data for product <br />
   `GET` /api/reviews/:id
 
 **Path Parameters**<br />
@@ -58,7 +58,7 @@
 
   `Unable to Retreive Reviews`: 400 BAD REQUEST
 
-### UPDATE <br />
+### Update a review for a product <br />
   `PATCH` /api/reviews/:id/:id
 
 **Path Parameters**<br />
@@ -88,7 +88,7 @@
 
   `Unable to update review`: 400 BAD REQUEST
 
-### DELETE <br />
+### Delete a review for a product <br />
   `DELETE` /api/reviews/:id/:id
 
 **Path Parameters**

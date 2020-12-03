@@ -86,7 +86,7 @@
 `Unable to update review`: 400 BAD REQUEST
 
 ### Delete a review for a product <br />
-  `DELETE` /api/reviews/:id/:id
+  `DELETE` /api/reviews/:productId/:reviewId
 
 **Path Parameters**<br />
 `productId` Product ID<br />

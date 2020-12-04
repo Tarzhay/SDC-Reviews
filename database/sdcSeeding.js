@@ -53,7 +53,7 @@ let allUsers = () => {
   let productString = "productName \n";
   let reviewString = "user_name,productName,reviewTitle,reviewText,reviewDate,broadAgeAppeal,lengthOfPlay,quality,value,average,wouldRecommend,verified,productId,userId \n";
 
-  for (var i = 0; i < 100; i++) {
+  for (var i = 0; i < 1000000; i++) {
     let review = reviewBuilder();
     userString+= review.user_name + '\n';
     productString+= review.productName + '\n';

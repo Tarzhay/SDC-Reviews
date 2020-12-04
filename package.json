@@ -6,7 +6,8 @@
   "scripts": {
     "react-dev": "webpack -d --watch",
     "start": "nodemon server/index.js",
-    "seed": "psql postgres < database/sdcSchema.sql && node database/sdcSeeding.js && node database/sdcLoading.js && node database/sdcSeeding.js && node database/sdcLoading.js node database/sdcSeeding.js && node database/sdcLoading.js node database/sdcSeeding.js && node database/sdcLoading.js node database/sdcSeeding.js && node database/sdcLoading.js && node database/sdcSeeding.js && node database/sdcLoading.js && node database/sdcSeeding.js && node database/sdcLoading.js node database/sdcSeeding.js && node database/sdcLoading.js node database/sdcSeeding.js && node database/sdcLoading.js node database/sdcSeeding.js && node database/sdcLoading.js",
+    "seed-postgres": "psql postgres < database/sdcSchema.sql && node database/sdcSeeding.js && node database/sdcLoading.js",
+    "seed-neo4j": "node database/sdcSeeding.js",
     "test": "jest",
     "client": "live-server"
   },

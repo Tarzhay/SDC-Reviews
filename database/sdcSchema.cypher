@@ -11,9 +11,9 @@ id, productName
 2, Instant Pot
 
 //reviews.csv
-id, userId, productId, user_name, productName, reviewTitle, reviewText, reviewDate, broadAgeAppeal, lengthOfPlay, quality, value, average, wouldRecommend, verified
+id, user_name, productName, reviewTitle, reviewText, reviewDate, broadAgeAppeal, lengthOfPlay, quality, value, average, wouldRecommend, verified, productId, userId
 
-1, 2, 1, Lazy Gorilla, Instant Pot, I like the pot, This is a really good pot, Thu Dec 03 2020, 5, 1, 4, 2, 3, 0, 0
+1,, Lazy Gorilla, Instant Pot, I like the pot, This is a really good pot, Thu Dec 03 2020, 5, 1, 4, 2, 3, 0, 0, 2, 1
 
 //Constraints
 CREATE CONSTRAINT userIdConstraint ON (user:User) ASSERT user.id IS UNIQUE

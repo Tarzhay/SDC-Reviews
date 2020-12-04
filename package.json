@@ -6,7 +6,7 @@
   "scripts": {
     "react-dev": "webpack -d --watch",
     "start": "nodemon server/index.js",
-    "seed": "mysql -u root -p < database/schema.sql",
+    "seed": "psql postgres < database/sdcSchema.sql && node database/sdcSeeding.js && node database/sdcLoading.js ",
     "test": "jest",
     "client": "live-server"
   },

@@ -1,7 +1,7 @@
 //NEO4J Database Schema + Load
 
 //users.csv
-id, user
+id, user_name
 1, Happy Hippo
 2, Lazy Gorilla
 

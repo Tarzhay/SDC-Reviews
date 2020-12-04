@@ -16,19 +16,19 @@ CREATE TABLE products (
 
 CREATE TABLE reviews (
   id SERIAL PRIMARY KEY,
-  productId int NOT NULL,
   user_name varchar(30),
   productName varchar(60),
-  reviewTitle varchar(40),
+  reviewTitle varchar(120),
   reviewText varchar(256),
   reviewDate varchar(30),
   broadAgeAppeal smallint NOT NULL,
   lengthOfPlay smallint NOT NULL,
   quality smallint NOT NULL,
   value smallint NOT NULL,
-  average numeric(3, 2),
+  average numeric(3, 2) NOT NULL,
   wouldRecommend smallint NOT NULL,
   verified smallint NOT NULL,
+  productId int NOT NULL,
   userId int NOT NULL,
   CONSTRAINT fkey_users
     FOREIGN KEY(userId)

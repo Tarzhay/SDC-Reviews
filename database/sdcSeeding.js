@@ -33,60 +33,16 @@ const reviewBuilder = () => {
 }
 
 // Building PostgreSQL CSV Files (Drain)
-// let postgresData = () => {
-//   //Create CSV file and path
-//   const usersFileName = fs.createWriteStream(path.join(__dirname, 'csvData/Postgres/users.csv'))
-//   const productsFileName = fs.createWriteStream(path.join(__dirname, 'csvData/Postgres/products.csv'))
-//   const reviewsFileName = fs.createWriteStream(path.join(__dirname, 'csvData/Postgres/reviews.csv'))
-
-//   //Write headers
-//   usersFileName.write('user_name \n')
-//   productsFileName.write('productName \n')
-//   reviewsFileName.write('user_name,productName,reviewTitle,reviewText,reviewDate,broadAgeAppeal,lengthOfPlay,quality,value,average,wouldRecommend,verified,productId,userId \n')
-
-//   let i = 100;
-//   let id = 0;
-//   const write = () => {
-//     let userOk = true;
-//     let productOk = true;
-//     let reviewOk = true;
-//     do {
-//       i -= 1;
-//       id += 1;
-//       const review = reviewBuilder();
-//       const userString = `${review.user_name} \n`;
-//       const productString = `${review.productName} \n`;
-//       const reviewString = `${review.user_name},${review.productName},${review.reviewTitle},${review.reviewText},${review.reviewDate},${review.broadAgeAppeal},${review.lengthOfPlay},${review.quality},${review.value},${review.average},${review.wouldRecommend},${review.verified},${review.productId},${review.userId} \n`;
-//       if (i === 0) {
-//         usersFileName.write(userString, 'utf-8', () => usersFileName.end());
-//         productsFileName.write(productString, 'utf-8', () => productsFileName.end());
-//         reviewsFileName.write(reviewString, 'utf-8', () => reviewsFileName.end());
-//       } else {
-//           userOk = usersFileName.write(userString, 'utf-8');
-//           productOk = productsFileName.write(productString, 'utf-8');
-//           reviewOk = reviewsFileName.write(reviewString, 'utf-8');
-//       }
-//     } while (i > 0 && userOk && productOk && reviewOk);
-//     if (i > 0) {
-//       usersFileName.once('drain', write);
-//       productsFileName.once('drain', write);
-//       reviewsFileName.once('drain', write);
-//     }
-//   }
-//   write();
-// }
-
-// Building Neo4J CSV Files (Drain)
-let neo4jData = () => {
+let postgresData = () => {
   //Create CSV file and path
-  const usersFileName = fs.createWriteStream(path.join(__dirname, 'csvData/Neo4j/users.csv'))
-  const productsFileName = fs.createWriteStream(path.join(__dirname, 'csvData/Neo4j/products.csv'))
-  const reviewsFileName = fs.createWriteStream(path.join(__dirname, 'csvData/Neo4j/reviews.csv'))
+  const usersFileName = fs.createWriteStream(path.join(__dirname, 'csvData/Postgres/users.csv'))
+  const productsFileName = fs.createWriteStream(path.join(__dirname, 'csvData/Postgres/products.csv'))
+  const reviewsFileName = fs.createWriteStream(path.join(__dirname, 'csvData/Postgres/reviews.csv'))
 
   //Write headers
-  usersFileName.write('id,user_name \n')
-  productsFileName.write('id,productName \n')
-  reviewsFileName.write('id,user_name,productName,reviewTitle,reviewText,reviewDate,broadAgeAppeal,lengthOfPlay,quality,value,average,wouldRecommend,verified,productId,userId \n')
+  usersFileName.write('user_name \n')
+  productsFileName.write('productName \n')
+  reviewsFileName.write('user_name,productName,reviewTitle,reviewText,reviewDate,broadAgeAppeal,lengthOfPlay,quality,value,average,wouldRecommend,verified,productId,userId \n')
 
   let i = 100;
   let id = 0;
@@ -98,9 +54,9 @@ let neo4jData = () => {
       i -= 1;
       id += 1;
       const review = reviewBuilder();
-      const userString = `${id},${review.user_name} \n`;
-      const productString = `${id},${review.productName} \n`;
-      const reviewString = `${id},${review.user_name},${review.productName},${review.reviewTitle},${review.reviewText},${review.reviewDate},${review.broadAgeAppeal},${review.lengthOfPlay},${review.quality},${review.value},${review.average},${review.wouldRecommend},${review.verified},${review.productId},${review.userId} \n`;
+      const userString = `${review.user_name} \n`;
+      const productString = `${review.productName} \n`;
+      const reviewString = `${review.user_name},${review.productName},${review.reviewTitle},${review.reviewText},${review.reviewDate},${review.broadAgeAppeal},${review.lengthOfPlay},${review.quality},${review.value},${review.average},${review.wouldRecommend},${review.verified},${review.productId},${review.userId} \n`;
       if (i === 0) {
         usersFileName.write(userString, 'utf-8', () => usersFileName.end());
         productsFileName.write(productString, 'utf-8', () => productsFileName.end());
@@ -120,8 +76,52 @@ let neo4jData = () => {
   write();
 }
 
-// postgresData();
-neo4jData();
+// Building Neo4J CSV Files (Drain)
+// let neo4jData = () => {
+//   //Create CSV file and path
+//   const usersFileName = fs.createWriteStream(path.join(__dirname, 'csvData/Neo4j/users.csv'))
+//   const productsFileName = fs.createWriteStream(path.join(__dirname, 'csvData/Neo4j/products.csv'))
+//   const reviewsFileName = fs.createWriteStream(path.join(__dirname, 'csvData/Neo4j/reviews.csv'))
+
+//   //Write headers
+//   usersFileName.write('id,user_name \n')
+//   productsFileName.write('id,productName \n')
+//   reviewsFileName.write('id,user_name,productName,reviewTitle,reviewText,reviewDate,broadAgeAppeal,lengthOfPlay,quality,value,average,wouldRecommend,verified,productId,userId \n')
+
+//   let i = 100;
+//   let id = 0;
+//   const write = () => {
+//     let userOk = true;
+//     let productOk = true;
+//     let reviewOk = true;
+//     do {
+//       i -= 1;
+//       id += 1;
+//       const review = reviewBuilder();
+//       const userString = `${id},${review.user_name} \n`;
+//       const productString = `${id},${review.productName} \n`;
+//       const reviewString = `${id},${review.user_name},${review.productName},${review.reviewTitle},${review.reviewText},${review.reviewDate},${review.broadAgeAppeal},${review.lengthOfPlay},${review.quality},${review.value},${review.average},${review.wouldRecommend},${review.verified},${review.productId},${review.userId} \n`;
+//       if (i === 0) {
+//         usersFileName.write(userString, 'utf-8', () => usersFileName.end());
+//         productsFileName.write(productString, 'utf-8', () => productsFileName.end());
+//         reviewsFileName.write(reviewString, 'utf-8', () => reviewsFileName.end());
+//       } else {
+//           userOk = usersFileName.write(userString, 'utf-8');
+//           productOk = productsFileName.write(productString, 'utf-8');
+//           reviewOk = reviewsFileName.write(reviewString, 'utf-8');
+//       }
+//     } while (i > 0 && userOk && productOk && reviewOk);
+//     if (i > 0) {
+//       usersFileName.once('drain', write);
+//       productsFileName.once('drain', write);
+//       reviewsFileName.once('drain', write);
+//     }
+//   }
+//   write();
+// }
+
+postgresData();
+// neo4jData();
 
 // Building PostgreSQL CSV Files (Chunks with script running multiple times, multiple loads)
 // let allUsers = () => {

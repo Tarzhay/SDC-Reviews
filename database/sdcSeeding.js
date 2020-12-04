@@ -44,7 +44,7 @@ let postgresData = () => {
   productsFileName.write('productName \n')
   reviewsFileName.write('user_name,productName,reviewTitle,reviewText,reviewDate,broadAgeAppeal,lengthOfPlay,quality,value,average,wouldRecommend,verified,productId,userId \n')
 
-  let i = 100;
+  let i = 10000000;
   let id = 0;
   const write = () => {
     let userOk = true;
@@ -75,6 +75,8 @@ let postgresData = () => {
   }
   write();
 }
+
+postgresData();
 
 // Building Neo4J CSV Files (Drain)
 // let neo4jData = () => {
@@ -120,7 +122,6 @@ let postgresData = () => {
 //   write();
 // }
 
-postgresData();
 // neo4jData();
 
 // Building PostgreSQL CSV Files (Chunks with script running multiple times, multiple loads)

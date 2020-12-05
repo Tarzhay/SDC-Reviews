@@ -90,7 +90,7 @@ let neo4jData = () => {
   productsFileName.write('id,productName\n')
   reviewsFileName.write('id,userName,productName,reviewTitle,reviewText,reviewDate,broadAgeAppeal,lengthOfPlay,quality,value,average,wouldRecommend,verified,productId,userId\n')
 
-  let i = 100;
+  let i = 10000000;
   let id = 0;
   const write = () => {
     let userOk = true;

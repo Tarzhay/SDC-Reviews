@@ -40,9 +40,7 @@ USING PERIODIC COMMIT 1000
 LOAD CSV WITH HEADERS FROM "file:///reviews.csv" AS csvLine
 CREATE (r: Review {
   id: toInteger(csvLine.id),
-  userId: toInteger(csvLine.userId),
-  productId: toInteger(csvLine.productId),
-  user_name: csvLine.user_name,
+  userName: csvLine.userName,
   reviewTitle: csvLine.reviewTitle,
   reviewText: csvLine.reviewText,
   reviewData: csvLine.reviewDate,
@@ -52,7 +50,9 @@ CREATE (r: Review {
   value: toInteger(csvLine.value),
   average: toInteger(csvLine.average),
   wouldRecommend: toInteger(csvLine.wouldRecommend),
-  verified: toInteger(csvLine.verified)
+  verified: toInteger(csvLine.verified),
+  productId: toInteger(csvLine.productId),
+  userId: toInteger(csvLine.userId)
   })
 MATCH (user:User {id: toInteger(csvLine.userId)}), (review:Review {id: toInteger(csvLine.userId)})
 CREATE (user)-[:REVIEWED]->(review)

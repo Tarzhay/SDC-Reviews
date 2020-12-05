@@ -6,7 +6,7 @@ CREATE DATABASE reviews;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
-  user_name varchar(30)
+  name varchar(30)
 );
 
 CREATE TABLE products (
@@ -16,7 +16,7 @@ CREATE TABLE products (
 
 CREATE TABLE reviews (
   id SERIAL PRIMARY KEY,
-  user_name varchar(30),
+  userName varchar(30),
   productName varchar(60),
   reviewTitle varchar(120),
   reviewText varchar(256),

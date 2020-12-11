@@ -6,7 +6,7 @@ CREATE DATABASE reviews;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
-  name varchar(30)
+  userName varchar(30)
 );
 
 CREATE TABLE products (
@@ -16,8 +16,6 @@ CREATE TABLE products (
 
 CREATE TABLE reviews (
   id SERIAL PRIMARY KEY,
-  userName varchar(30),
-  productName varchar(60),
   reviewTitle varchar(120),
   reviewText varchar(256),
   reviewDate varchar(30),
@@ -29,11 +27,5 @@ CREATE TABLE reviews (
   wouldRecommend smallint NOT NULL,
   verified smallint NOT NULL,
   productId int NOT NULL,
-  userId int NOT NULL,
-  CONSTRAINT fkey_users
-    FOREIGN KEY(userId)
-      REFERENCES users(id),
-  CONSTRAINT fkey_products
-    FOREIGN KEY(productId)
-      REFERENCES products(id)
+  userId int NOT NULL
 );

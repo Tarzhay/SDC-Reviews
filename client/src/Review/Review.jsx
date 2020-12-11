@@ -5,7 +5,7 @@ import moment from "moment";
 
 const Review = (props) => {
   var verifyText = "";
-  var reviewDateText = moment(props.review.reviewDate, "YYYYMMDD").fromNow();
+  var reviewDateText = moment(props.review.reviewdate, "YYYYMMDD").fromNow();
   if (props.review.verified === 1) {
     verifyText = "Verified purchaser"
     reviewDateText += ", "
@@ -14,21 +14,21 @@ const Review = (props) => {
   return  (
     <div className="review">
       <div>
-        <div className="reviewTitle">{props.review.reviewTitle}</div>
-        <StarRating score={props.review.average}/>
+        <div className="reviewTitle">{props.review.reviewtitle}</div>
+        <StarRating score={Number(props.review.average)}/>
         {/* <div className="average">{props.review.average}</div> */}
   <div className="usernameDate">{props.review.username} - {reviewDateText} <span className="greenText">{verifyText}</span></div>
         <br></br>
-        <div className="reviewText">{props.review.reviewText}</div>
+        <div className="reviewText">{props.review.reviewtext}</div>
       </div>
       <br></br>
       <div className="attributeRatings">
         <div className="attributeRating">
-          <Donut2 score={props.review.broadAgeAppeal * 20}></Donut2>
+          <Donut2 score={props.review.broadageappeal * 20}></Donut2>
           <div>Broad age appeal</div>
         </div>
         <div className="attributeRating">
-          <Donut2 score={props.review.lengthOfPlay * 20}></Donut2>
+          <Donut2 score={props.review.lengthofplay * 20}></Donut2>
           <div>Length of play</div>
         </div>
         <div className="attributeRating">

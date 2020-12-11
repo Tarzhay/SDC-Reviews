@@ -17,14 +17,14 @@ const Summary = (props) => {
 
 
   for (var i = 0; i < props.reviews.length; i++) {
-    broadAgeAppealTotal += props.reviews[i].broadAgeAppeal;
-    lengthOfPlayTotal += props.reviews[i].lengthOfPlay;
+    broadAgeAppealTotal += props.reviews[i].broadageappeal;
+    lengthOfPlayTotal += props.reviews[i].lengthofplay;
     qualityTotal += props.reviews[i].quality;
     valueTotal += props.reviews[i].value
-    wouldRecommendTotal += props.reviews[i].wouldRecommend;
+    wouldRecommendTotal += props.reviews[i].wouldrecommend;
 
 
-    var average = Math.round((props.reviews[i].broadAgeAppeal + props.reviews[i].lengthOfPlay + props.reviews[i].quality + props.reviews[i].value)/4)
+    var average = Math.round((props.reviews[i].broadageappeal + props.reviews[i].lengthofplay + props.reviews[i].quality + props.reviews[i].value)/4)
     if (average === 5) {
       fives++;
     } else if (average === 4) {

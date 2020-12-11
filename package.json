@@ -6,8 +6,8 @@
   "scripts": {
     "react-dev": "webpack -d --watch",
     "start": "nodemon server/index.js",
-    "seed-postgres": "psql postgres < database/sdcSchema.sql && node database/sdcSeeding.js && node database/sdcLoading.js",
-    "seed-neo4j": "node database/sdcSeeding.js",
+    "seed-postgres": "psql postgres < database/sdcSchema.sql && node --max-old-space-size=8192 database/sdcSeeding.js && node database/sdcLoadingPostgres.js && psql postgres < database/sdcSchemaConstraint.sql",
+    "seed-neo4j": "node --max-old-space-size=8192 database/sdcSeeding.js && node database/sdcLoadingNeo4j.js",
     "test": "jest",
     "client": "live-server"
   },

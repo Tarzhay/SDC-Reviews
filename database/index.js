@@ -1,4 +1,4 @@
-//Original FEC Code
+// Original FEC Code
 // const mysql = require('mysql');
 // const connection = mysql.createConnection({
 //   host: 'localhost',
@@ -12,6 +12,7 @@
 // module.exports = {connection};
 
 const { Pool } = require('pg');
+const { promisify } = require('util');
 const pool = new Pool({
   host: 'localhost',
   user: 'kkha',
@@ -19,4 +20,26 @@ const pool = new Pool({
   port: '5432'
 })
 
-module.exports = { pool };
+const query = promisify(pool.query).bind(pool);
+
+//GET
+const getProductReview = (productId, callback) => {
+  pool.query(`SELECT * FROM reviews r, users u WHERE productId = ${productId} AND r.userId = u.id;`)
+  // pool.query(`SELECT id FROM users ORDER BY id DESC LIMIT 1;`)
+    .then((success) => callback(null, success))
+    .catch((err) => callback(err))
+}
+
+
+//POST
+const postProductReview = (reviewObj, productId, callback) => {
+  pool.query(`INSERT INTO users (username) VALUES ('${reviewObj.username}');`)
+  .catch((err) => console.log(err))
+  .then(() => pool.query('SELECT id FROM users ORDER BY id desc limit 1;'))
+  .catch((err) => console.log(err))
+  .then((user) => pool.query(`INSERT INTO reviews(reviewtitle, reviewtext, reviewdate, broadageappeal, lengthofplay, quality, value, average, wouldrecommend, verified, productid, userid) VALUES ('${reviewObj.reviewtitle}', '${reviewObj.reviewtext}', '${reviewObj.reviewdate}', ${reviewObj.broadageappeal}, ${reviewObj.lengthofplay}, ${reviewObj.quality}, ${reviewObj.value}, ${reviewObj.average}, ${reviewObj.wouldrecommend}, ${reviewObj.verified}, ${productId}, ${user.rows[0].id});`))
+  .catch((err) => console.log(err))
+  .then((success) => callback(null, success))
+}
+
+module.exports = { pool, getProductReview, postProductReview };

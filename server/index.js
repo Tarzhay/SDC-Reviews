@@ -1,4 +1,9 @@
 const express = require('express');
+const newrelic = require('newrelic');
+newrelic.instrumentLoadedModule(
+  'express', // the module's name, as a string
+  express // the module instance
+  );
 const app = express();
 const port = 3003;
 const path = require('path');
@@ -26,7 +31,7 @@ app.get('/:id', (req, res) => {
 
 //SDC Postgres Routes
 app.get('/api/reviews/:productId', (req, res) => {
-  console.log(Number(req.params.productId))
+  // console.log(Number(req.params.productId))
   const productId = Number(req.params.productId)
   db.getProductReview(productId, (err, success) => {
     if (err) {

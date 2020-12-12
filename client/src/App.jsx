@@ -33,12 +33,11 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`/api/reviews/395782`)
+    axios.get(`/api/reviews/1`)
     .then((response) => {
-      console.log(response)
       this.setState({
-        allReviews: response.data.rows,
-        displayedReviews: response.data.rows
+        allReviews: response.data,
+        displayedReviews: response.data
       })
     })
     .catch((err) => {

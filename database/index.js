@@ -15,7 +15,8 @@ const { Pool } = require('pg');
 const { promisify } = require('util');
 const pool = new Pool({
   host: 'localhost',
-  user: 'kkha',
+  // user: 'kkha',
+  user:'postgres',
   database: 'reviews',
   port: '5432'
 })

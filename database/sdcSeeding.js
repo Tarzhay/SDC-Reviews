@@ -34,9 +34,9 @@ const reviewBuilder = () => {
 
 // Building PostgreSQL CSV Files (Drain)
 const rows = 10000;
-const usersFileName = fs.createWriteStream(path.join(__dirname, 'csvData/Postgres/users.csv'))
-const productsFileName = fs.createWriteStream(path.join(__dirname, 'csvData/Postgres/products.csv'))
-const reviewsFileName = fs.createWriteStream(path.join(__dirname, 'csvData/Postgres/reviews.csv'))
+const usersFileName = fs.createWriteStream(path.join(__dirname, 'users.csv'))
+const productsFileName = fs.createWriteStream(path.join(__dirname, 'products.csv'))
+const reviewsFileName = fs.createWriteStream(path.join(__dirname, 'reviews.csv'))
 
 usersFileName.write('userName\n', 'utf-8')
 productsFileName.write('productName\n', 'utf-8')

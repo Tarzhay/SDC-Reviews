@@ -42,7 +42,7 @@ const reviewBuilder = () => {
 // const reviewsFileName = fs.createWriteStream(path.join(__dirname, 'csvData/Postgres/reviews.csv'))
 
 //EC2
-const rows = 10000;
+const rows = 10000000;
 const usersFileName = fs.createWriteStream(path.join(__dirname, 'users.csv'))
 const productsFileName = fs.createWriteStream(path.join(__dirname, 'products.csv'))
 const reviewsFileName = fs.createWriteStream(path.join(__dirname, 'reviews.csv'))

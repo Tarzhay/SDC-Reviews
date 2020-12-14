@@ -16,8 +16,10 @@ const { promisify } = require('util');
 const pool = new Pool({
   host: 'localhost',
   // user: 'kkha',
+  //<---------EC2
   user:'postgres',
   password:'password',
+  // ------------------->
   database: 'reviews',
   port: '5432'
 })

@@ -43,91 +43,91 @@ productsFileName.write('productName\n', 'utf-8')
 reviewsFileName.write('reviewTitle,reviewText,reviewDate,broadAgeAppeal,lengthOfPlay,quality,value,average,wouldRecommend,verified,productId,userId\n', 'utf-8')
 
 //Build Postgres Data
-const postgresDataPrimaryUser = (writeFile, encoding, callback) => {
-  // console.time('postgresDataPrimaryUser')
-  let i = rows;
-  let id = 0;
+// const postgresDataPrimaryUser = (writeFile, encoding, callback) => {
+//   // console.time('postgresDataPrimaryUser')
+//   let i = rows;
+//   let id = 0;
 
-  const write = () => {
-    let userOk = true;
-    do {
-      i--;
-      id++;
-      const review = reviewBuilder();
-      const userString = `${review.userName}\n`;
-      if (i === 0) {
-        usersFileName.write(userString, encoding, callback);
-      } else {
-          userOk = usersFileName.write(userString, encoding);
-      }
-    } while (i > 0 && userOk)
-    if (i > 0) {
-      usersFileName.once('drain', write);
-    }
-  }
-  write();
-}
+//   const write = () => {
+//     let userOk = true;
+//     do {
+//       i--;
+//       id++;
+//       const review = reviewBuilder();
+//       const userString = `${review.userName}\n`;
+//       if (i === 0) {
+//         usersFileName.write(userString, encoding, callback);
+//       } else {
+//           userOk = usersFileName.write(userString, encoding);
+//       }
+//     } while (i > 0 && userOk)
+//     if (i > 0) {
+//       usersFileName.once('drain', write);
+//     }
+//   }
+//   write();
+// }
 
-const postgresDataPrimaryProduct = (writeFile, encoding, callback) => {
-  let i = rows;
-  let id = 0;
+// const postgresDataPrimaryProduct = (writeFile, encoding, callback) => {
+//   let i = rows;
+//   let id = 0;
 
-  const write = () => {
-    let productOk = true;
-    do {
-      i--;
-      id++;
-      const review = reviewBuilder();
-      const productString = `${review.productName}\n`;
-      if (i === 0) {
-        productsFileName.write(productString, encoding, callback);
-      } else {
-          productOk = productsFileName.write(productString, encoding);
-      }
-    } while (i > 0 && productOk)
-    if (i > 0) {
-      productsFileName.once('drain', write);
-    }
-  }
-  write();
-}
+//   const write = () => {
+//     let productOk = true;
+//     do {
+//       i--;
+//       id++;
+//       const review = reviewBuilder();
+//       const productString = `${review.productName}\n`;
+//       if (i === 0) {
+//         productsFileName.write(productString, encoding, callback);
+//       } else {
+//           productOk = productsFileName.write(productString, encoding);
+//       }
+//     } while (i > 0 && productOk)
+//     if (i > 0) {
+//       productsFileName.once('drain', write);
+//     }
+//   }
+//   write();
+// }
 
-const postgresDataSecondaryReview = (writeFile, encoding, callback) => {
-  let i = rows;
-  let id = 0;
+// const postgresDataSecondaryReview = (writeFile, encoding, callback) => {
+//   let i = rows;
+//   let id = 0;
 
-  const write = () => {
-    let reviewOk = true;
-    do {
-      i--;
-      id++;
-      const review = reviewBuilder();
-      const reviewString = `${review.reviewTitle},${review.reviewText},${review.reviewDate},${review.broadAgeAppeal},${review.lengthOfPlay},${review.quality},${review.value},${review.average},${review.wouldRecommend},${review.verified},${review.productId},${review.userId}\n`;
-      if (i === 0) {
-        reviewsFileName.write(reviewString, encoding, callback);
-      } else {
-        reviewOk = reviewsFileName.write(reviewString, encoding);
-      }
-    } while (i > 0 && reviewOk)
-    if (i > 0) {
-      reviewsFileName.once('drain', write);
-    }
-  }
-  write();
-}
+//   const write = () => {
+//     let reviewOk = true;
+//     do {
+//       i--;
+//       id++;
+//       const review = reviewBuilder();
+//       const reviewString = `${review.reviewTitle},${review.reviewText},${review.reviewDate},${review.broadAgeAppeal},${review.lengthOfPlay},${review.quality},${review.value},${review.average},${review.wouldRecommend},${review.verified},${review.productId},${review.userId}\n`;
+//       if (i === 0) {
+//         reviewsFileName.write(reviewString, encoding, callback);
+//       } else {
+//         reviewOk = reviewsFileName.write(reviewString, encoding);
+//       }
+//     } while (i > 0 && reviewOk)
+//     if (i > 0) {
+//       reviewsFileName.once('drain', write);
+//     }
+//   }
+//   write();
+// }
 
-postgresDataPrimaryUser(usersFileName,'utf-8',()=>{
-  usersFileName.end();
-  console.log('Created Primary User Data');
-  postgresDataPrimaryProduct(productsFileName,'utf-8',()=>{
-    productsFileName.end();
-    console.log('Created Primary Product Data');
-    postgresDataSecondaryReview(reviewsFileName,'utf-8',()=>{
-      reviewsFileName.end();
-      console.log('Created Second Review Data');
-    })
-  })
-})
+// postgresDataPrimaryUser(usersFileName,'utf-8',()=>{
+//   usersFileName.end();
+//   console.log('Created Primary User Data');
+//   postgresDataPrimaryProduct(productsFileName,'utf-8',()=>{
+//     productsFileName.end();
+//     console.log('Created Primary Product Data');
+//     postgresDataSecondaryReview(reviewsFileName,'utf-8',()=>{
+//       reviewsFileName.end();
+//       console.log('Created Second Review Data');
+//     })
+//   })
+// })
 
 // ---------------------------------------------------------------------------------
 

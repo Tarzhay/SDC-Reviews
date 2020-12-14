@@ -6,7 +6,7 @@ const db = require('./index.js');
 const reviewBuilder = () => {
   const ratingRange = { min: 1, max: 5};
   const recommend = { min: 0, max: 1}
-  const totalRange = { min: 1, max: 10000000}
+  const totalRange = { min: 1, max: 500}
 
   //Sub optimal way to get average into object
   const broadAgeRating = faker.random.number(ratingRange);
@@ -33,7 +33,7 @@ const reviewBuilder = () => {
 }
 
 // Building PostgreSQL CSV Files (Drain)
-const rows = 10000000;
+const rows = 10000;
 const usersFileName = fs.createWriteStream(path.join(__dirname, 'csvData/Postgres/users.csv'))
 const productsFileName = fs.createWriteStream(path.join(__dirname, 'csvData/Postgres/products.csv'))
 const reviewsFileName = fs.createWriteStream(path.join(__dirname, 'csvData/Postgres/reviews.csv'))

@@ -30,6 +30,12 @@ const getProductReview = (productId, callback) => {
     .catch((err) => callback(err))
 }
 
+// const getProductReview = (productId, callback) => {
+//   pool.query(`SELECT (r.id, r.reviewtitle, r.reviewtext, r.reviewdate, r.broadageappeal, r.lengthofplay, r.quality, r.value, r.average, r.wouldrecommend, r.verified, r.productid, r.userid, u.username) FROM reviews r, users u WHERE r.productId = ${productId} AND r.userId = u.id;`)
+//     .then((success) => callback(null, success))
+//     .catch((err) => callback(err))
+// }
+
 
 //POST
 const postProductReview = (reviewObj, productId, callback) => {

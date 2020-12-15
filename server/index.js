@@ -35,6 +35,7 @@ app.get('/api/reviews/:productId', (req, res) => {
   const productId = Number(req.params.productId)
   db.getProductReview(productId, (err, success) => {
     if (err) {
+      console.log(err)
       res.status(400).send('Bad request, unable to retrieve reviews');
     } else {
       // console.log(success.rows[0].id)

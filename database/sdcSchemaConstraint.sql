@@ -6,6 +6,6 @@ ALTER TABLE reviews
       REFERENCES users(id),
   ADD CONSTRAINT fkey_products
       FOREIGN KEY(productId)
-      REFERENCES products(id)
+      REFERENCES products(id);
 
-CREATE INDEX ON reviews(productId, userId)
+CREATE INDEX ON reviews(productId, userId);

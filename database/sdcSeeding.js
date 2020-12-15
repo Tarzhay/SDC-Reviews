@@ -6,7 +6,7 @@ const db = require('./index.js');
 const reviewBuilder = () => {
   const ratingRange = { min: 1, max: 5};
   const recommend = { min: 0, max: 1}
-  const totalRange = { min: 1, max: 500}
+  const totalRange = { min: 1, max: 8000000}
 
   //Sub optimal way to get average into object
   const broadAgeRating = faker.random.number(ratingRange);

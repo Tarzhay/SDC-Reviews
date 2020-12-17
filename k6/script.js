@@ -3,17 +3,18 @@ import { sleep } from 'k6';
 
 //GET
 export let options = {
-  // vus:100,
+  // vus:1,
   // duration:'5s'
   stages: [
-    { duration: '10s', target: 500 },
     { duration: '5s', target: 500 },
-    { duration: '10s', target: 0 },
+    { duration: '5s', target: 500 },
+    { duration: '5s', target: 0 },
   ],
 };
 export default function () {
-  const productId = Math.floor(Math.random() * 10000000);
-  http.get(`http://localhost:3003/api/reviews/${productId}`);
+  const productId = Math.floor(Math.random() * 8000000);
+  // http.get(`http://localhost:3003/api/reviews/${productId}`);
+  http.get(`http://54.219.46.93/api/reviews/${productId}`);
   // sleep(1);
 }
 

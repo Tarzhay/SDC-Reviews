@@ -18,7 +18,7 @@ const pool = new Pool({
 
   // user: 'kkha',
   //<---------EC2
-  host: 'ec2-13-52-187-69.us-west-1.compute.amazonaws.com',
+  host: 'ec2-54-153-127-90.us-west-1.compute.amazonaws.com',
   user:'postgres',
   password:'password',
   // ------------------->

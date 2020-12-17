@@ -36,16 +36,16 @@ const reviewBuilder = () => {
 // const rows = 10000;
 
 //Local
-// const rows = 10000000;
-// const usersFileName = fs.createWriteStream(path.join(__dirname, 'csvData/Postgres/users.csv'))
-// const productsFileName = fs.createWriteStream(path.join(__dirname, 'csvData/Postgres/products.csv'))
-// const reviewsFileName = fs.createWriteStream(path.join(__dirname, 'csvData/Postgres/reviews.csv'))
+const rows = 10000000;
+const usersFileName = fs.createWriteStream(path.join(__dirname, 'csvData/Postgres/users.csv'))
+const productsFileName = fs.createWriteStream(path.join(__dirname, 'csvData/Postgres/products.csv'))
+const reviewsFileName = fs.createWriteStream(path.join(__dirname, 'csvData/Postgres/reviews.csv'))
 
 //EC2
-const rows = 10000000;
-const usersFileName = fs.createWriteStream(path.join(__dirname, 'users.csv'))
-const productsFileName = fs.createWriteStream(path.join(__dirname, 'products.csv'))
-const reviewsFileName = fs.createWriteStream(path.join(__dirname, 'reviews.csv'))
+// const rows = 10000000;
+// const usersFileName = fs.createWriteStream(path.join(__dirname, 'users.csv'))
+// const productsFileName = fs.createWriteStream(path.join(__dirname, 'products.csv'))
+// const reviewsFileName = fs.createWriteStream(path.join(__dirname, 'reviews.csv'))
 
 usersFileName.write('userName\n', 'utf-8')
 productsFileName.write('productName\n', 'utf-8')
@@ -102,7 +102,7 @@ const postgresDataPrimaryProduct = (writeFile, encoding, callback) => {
 }
 
 const postgresDataSecondaryReview = (writeFile, encoding, callback) => {
-  let i = rows;
+  let i = 20000000;
   let id = 0;
 
   const write = () => {
